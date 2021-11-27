@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:signature="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckActivity">
+
+
+    <TextView
+        android:id="@+id/hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat Pagi Arif"/>
+
+    <TextView
+        android:id="@+id/gejala"
+        android:layout_width="344dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/hello"
+        android:text="Apakah anda mengalami salah satu gejala berikut?" />
+
+    <RelativeLayout
+        android:id="@+id/checkboxGejala"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gejala"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/gejala1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Demam" />
+
+        <CheckBox
+            android:id="@+id/gejala2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batuk Pilek"
+            android:layout_below="@id/gejala1"/>
+
+        <CheckBox
+            android:id="@+id/gejala3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tenggorokan Sakit"
+            android:layout_below="@id/gejala2"/>
+
+        <CheckBox
+            android:id="@+id/gejala4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hidung Tersumbat"
+            android:layout_below="@id/gejala3"/>
+
+        <CheckBox
+            android:id="@+id/gejala5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nyeri Kepala"
+            android:layout_below="@id/gejala4"/>
+
+        <CheckBox
+            android:id="@+id/gejala6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sesak Nafas"
+            android:layout_below="@id/gejala5"/>
+        <CheckBox
+            android:id="@+id/gejala7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lemas"
+            android:layout_below="@id/gejala6"/>
+        <CheckBox
+            android:id="@+id/gejala8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hilang Penciuman"
+            android:layout_below="@id/gejala7"/>
+        <CheckBox
+            android:id="@+id/gejala9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diare"
+            android:layout_below="@id/gejala8"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/riwayat"
+        android:layout_width="344dp"
+        android:layout_height="37dp"
+        android:layout_below="@id/checkboxGejala"
+        android:text="Apakah anda memiliki riwayat kontak orang yag bergajal covid 19?" />
+
+    <Spinner
+        android:id="@+id/spinnerRiwayat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/riwayat" />
+
+    <TextView
+        android:id="@+id/pernyataan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerRiwayat"
+        android:text="Berdasar self assessment tersebut, saya menyatakan diri bahwa saya" />
+    <Spinner
+        android:id="@+id/spinnerPernyataan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pernyataan" />
+    <Button
+        android:id="@+id/kirim"
+        android:text="Kirim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerPernyataan"/>
+
+
+</RelativeLayout>
