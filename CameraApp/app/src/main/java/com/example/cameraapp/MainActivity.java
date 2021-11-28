@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         baru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), CheckActivity.class));
+                startActivity(new Intent(getBaseContext(), Medcheck.class));
             }
         });
 
