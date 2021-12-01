@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String Base_URL="http://192.168.1.5/file_php/";
+    private static final String Base_URL="http://192.168.1.6/file_php/";
     private static RetrofitClient myclient;
     private Retrofit retrofit;
 

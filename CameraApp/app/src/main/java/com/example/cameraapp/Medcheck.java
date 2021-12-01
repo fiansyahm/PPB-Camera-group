@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class Medcheck extends AppCompatActivity {
 
@@ -56,54 +60,75 @@ public class Medcheck extends AppCompatActivity {
             public void onClick(View view) {
                 // Melihat Status Kondisi Pada Pilihan Menu Ayam Goreng
                 if(gejala1.isChecked()){
-                    gejala=gejala+"Demam;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala1.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
                 if(gejala2.isChecked()){
-                    gejala=gejala+"Batuk-Pilek;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala2.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
                 if(gejala3.isChecked()){
-                    gejala=gejala+"Tenggorokan Sakit;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala3.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
                 if(gejala4.isChecked()){
-                    gejala=gejala+"Hidung Tersumbat;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala4.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
                 if(gejala5.isChecked()){
-                    gejala=gejala+"Nyeri Kepala;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala5.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
                 if(gejala6.isChecked()){
-                    gejala=gejala+"Sesak Nafas;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala6.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
                 if(gejala7.isChecked()){
-                    gejala=gejala+"Lemas;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala7.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
                 if(gejala8.isChecked()){
-                    gejala=gejala+"Hilang Penciuman;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala8.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
                 if(gejala9.isChecked()){
-                    gejala=gejala+"Diare;";
+                    gejala=gejala+"Ya;";
                 }else if(!gejala9.isChecked()){
-                    gejala=gejala+";";
+                    gejala=gejala+"Tidak;";
                 }
-                startActivity(new Intent(getBaseContext(), MainActivity.class));
+//                startActivity(new Intent(getBaseContext(), MainActivity.class));
                 String pernyataan=spinner.getSelectedItem().toString();
                 String riwayat=spinner1.getSelectedItem().toString();
                 String keputusan=spinner2.getSelectedItem().toString();
+                String id="1";
+                gejala=gejala+pernyataan+riwayat+keputusan+id;
+
+                Call<Response> call=RetrofitClient.getInstance().getApi().uploadMedcheck("gejala");
+                call.enqueue(new Callback<Response>() {
+                    @Override
+                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                        Toast.makeText(Medcheck.this, "Upload Sukses", Toast.LENGTH_SHORT).show();
+
+//                if(response.body().isStatus()){
+//
+//                }else{
+//
+//                }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Response> call, Throwable t) {
+                        Toast.makeText(Medcheck.this, "Upload Gagal", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }

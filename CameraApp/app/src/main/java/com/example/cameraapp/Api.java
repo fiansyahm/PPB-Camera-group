@@ -11,4 +11,10 @@ public interface Api {
     Call<Response> uploadImage(
             @Field("EN_IMAGE") String encodedImage
     );
+
+    @FormUrlEncoded
+    @POST("upload_formmedcheck.php")
+    Call<Response> uploadMedcheck(
+            @Field("EN_MED") String encoded
+    );
 }
