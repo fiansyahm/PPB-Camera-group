@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="1000dp">
 
-        <TextView
+        <TextClock
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,7 +98,8 @@
             android:autoSizeMaxTextSize="100sp"
             android:autoSizeMinTextSize="12sp"
             android:autoSizeStepGranularity="2sp"
-            android:text="Take" />
+            android:text="Take"
+            android:onClick="operasi"/>
 
         <TextView
             android:id="@+id/AttandenceSignatureTxt"
@@ -124,7 +125,8 @@
             android:layout_height="35dp"
             android:layout_below="@id/AttandenceSignatureTxt"
             android:layout_toRightOf="@id/signature_pad_attandence"
-            android:background="@android:drawable/ic_menu_save" />
+            android:background="@android:drawable/ic_menu_save"
+            android:onClick="operasi"/>
 
         <Button
             android:id="@+id/deleteSignature"
@@ -132,7 +134,8 @@
             android:layout_height="35dp"
             android:layout_below="@id/saveSignature"
             android:layout_toRightOf="@id/signature_pad_attandence"
-            android:background="@android:drawable/ic_menu_delete" />
+            android:background="@android:drawable/ic_menu_delete"
+            android:onClick="operasi"/>
 
         <CheckBox
             android:id="@+id/wfhCheckBox"
@@ -154,7 +157,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginLeft="70dp"
-                android:text="Datang" />
+                android:text="Datang"
+                android:onClick="operasi"/>
 
             <Button
                 android:id="@+id/pulangbtnAttandence"
@@ -162,25 +166,20 @@
                 android:layout_height="35dp"
                 android:layout_marginLeft="50dp"
                 android:layout_toRightOf="@id/datangbtnAttandence"
-                android:text="Pulang" />
+                android:text="Pulang"
+                android:onClick="operasi"/>
         </RelativeLayout>
 
         <TextView
             android:id="@+id/locationtxt"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/buttonAttandence"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:text="Lokasi Terkni" />
 
-        <fragment
-            android:id="@+id/attandence_GmapView"
-            class="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="166dp"
-            android:layout_below="@id/locationtxt"
-            android:layout_marginTop="1dp" />
-        />
+
 
     </RelativeLayout>
 
