@@ -8,41 +8,43 @@
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nama"/>
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:text="nama" />
+
     <TextView
         android:id="@+id/text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nama"
-        android:layout_below="@id/text1"/>
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_below="@id/text1"
+        android:text="nama" />
+
     <TextView
         android:id="@+id/text3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nama"
-        android:layout_below="@id/text2"/>
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_below="@id/text2"
+        android:text="nama" />
+
     <TextView
         android:id="@+id/text4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nama"
-        android:layout_below="@id/text3"/>
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_below="@id/text3"
+        android:text="nama" />
+
     <FrameLayout
         android:id="@+id/frame"
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@id/text4"/>
+        android:background="@android:color/darker_gray" />
 
     <com.github.gcacace.signaturepad.views.SignaturePad
         android:id="@+id/signature_pad"
-        android:layout_width="match_parent"
-        android:layout_height="381dp"
-        android:layout_below="@id/frame"
-        android:layout_marginTop="31dp" />
+        android:layout_width="325dp"
+        android:layout_height="115dp"
+        android:layout_below="@id/text4"
+        android:layout_marginTop="30dp" />
 
     <Button
         android:id="@+id/clear_button"

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AttandenceActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="12:29"/>
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:layout_below="@id/time"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="-5dp"
+            android:text="Monday,2-November-2020" />
+
+        <TextView
+            android:id="@+id/workCodeTxt"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/date"
+            android:text="Work Code" />
+
+        <Spinner
+            android:id="@+id/spinnerWorkCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/workCodeTxt"
+            android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/hariTxt"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/spinnerWorkCode"
+            android:text="Hari                              Senin" />
+        <TextView
+            android:id="@+id/jamMasukAwalTxt"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/hariTxt"
+            android:text="Jam Masuk Awal       06:15" />
+        <TextView
+            android:id="@+id/jamMasukTxt"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/jamMasukAwalTxt"
+            android:text="Jam Masuk                 07.00" />
+        <TextView
+            android:id="@+id/jamKeluarTxt"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/jamMasukTxt"
+            android:text="Jam Keluar                15.30" />
+        <TextView
+            android:id="@+id/jamKeluarAkhirTxt"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/jamKeluarTxt"
+            android:text="Jam Keluar                16.30" />
+        <TextView
+            android:id="@+id/photoTxt"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/jamKeluarAkhirTxt"
+            android:text="      Photo" />
+
+        <ImageView
+            android:id="@+id/imageAttandence"
+            android:layout_width="104dp"
+            android:layout_height="97dp"
+            android:layout_below="@id/photoTxt"
+            tools:srcCompat="@drawable/ic_launcher_background" />
+
+        <Button
+            android:id="@+id/buttonUploadPhotoAttandence"
+            android:layout_width="105dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/imageAttandence"
+            android:layout_marginTop="0dp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="2sp"
+            android:text="Take" />
+        <TextView
+            android:id="@+id/AttandenceSignatureTxt"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_below="@id/jamKeluarAkhirTxt"
+            android:text="Tanda Tangan"
+            android:layout_toRightOf="@id/imageAttandence"
+            android:layout_marginLeft="50dp"/>
+
+        <com.github.gcacace.signaturepad.views.SignaturePad
+            android:id="@+id/signature_pad_attandence"
+            android:layout_width="250dp"
+            android:layout_height="123dp"
+            android:layout_below="@id/AttandenceSignatureTxt"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/imageAttandence"
+            android:background="@color/purple_200" />
+        <Button
+            android:id="@+id/saveSignature"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/AttandenceSignatureTxt"
+            android:layout_toRightOf="@id/signature_pad_attandence"
+            android:background="@android:drawable/ic_menu_save"/>
+        <Button
+            android:id="@+id/deleteSignature"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/saveSignature"
+            android:layout_toRightOf="@id/signature_pad_attandence"
+            android:background="@android:drawable/ic_menu_delete"/>
+        <CheckBox
+            android:id="@+id/wfhCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Work From Home"
+            android:layout_below="@id/signature_pad_attandence"
+            android:layout_centerInParent="true"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/wfhCheckBox"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:id="@+id/datangbtnAttandence"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="70dp"
+                android:text="Datang" />
+
+            <Button
+                android:id="@+id/pulangbtnAttandence"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@id/datangbtnAttandence"
+                android:text="Pulang" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

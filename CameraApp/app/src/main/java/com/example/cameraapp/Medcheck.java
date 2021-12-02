@@ -38,14 +38,13 @@ public class Medcheck extends AppCompatActivity {
 
         // Saat Tombol Diklik Maka Program Akan mengeksekusi Pesanan dari User
 
-
-        String list[]={"Ya","Tidak"};
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerPernyataan);
+        String list[]={"Sehat","Tidak Sehat"};
+        Spinner spinner = (Spinner) findViewById(R.id.spinnerRiwayat);
         ArrayAdapter<String> AdapterList = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,list);
         spinner.setAdapter(AdapterList);
 
-        String list1[]={"Sehat","Tidak Sehat"};
-        Spinner spinner1 = (Spinner) findViewById(R.id.spinnerRiwayat);
+        String list1[]={"Ya","Tidak"};
+        Spinner spinner1 = (Spinner) findViewById(R.id.spinnerPernyataan);
         ArrayAdapter<String> AdapterList1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,list1);
         spinner1.setAdapter(AdapterList1);
 
@@ -58,65 +57,76 @@ public class Medcheck extends AppCompatActivity {
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gejala="1;";
+
                 // Melihat Status Kondisi Pada Pilihan Menu Ayam Goreng
                 if(gejala1.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala1.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
+
                 if(gejala2.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala2.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
+
                 if(gejala3.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala3.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
+
                 if(gejala4.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala4.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
+
                 if(gejala5.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala5.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
+
                 if(gejala6.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala6.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
+
                 if(gejala7.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala7.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
+
                 if(gejala8.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala8.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
+
                 if(gejala9.isChecked()){
                     gejala=gejala+"Ya;";
                 }else if(!gejala9.isChecked()){
                     gejala=gejala+"Tidak;";
                 }
-//                startActivity(new Intent(getBaseContext(), MainActivity.class));
-                String pernyataan=spinner.getSelectedItem().toString();
-                String riwayat=spinner1.getSelectedItem().toString();
-                String keputusan=spinner2.getSelectedItem().toString();
-                String id="1";
-                gejala=gejala+pernyataan+riwayat+keputusan+id;
 
-                Call<Response> call=RetrofitClient.getInstance().getApi().uploadMedcheck("gejala");
+//                startActivity(new Intent(getBaseContext(), MainActivity.class));
+                String riwayat=spinner.getSelectedItem().toString();
+                String pernyataan=spinner1.getSelectedItem().toString();
+                String keputusan=spinner2.getSelectedItem().toString();
+                gejala=gejala+pernyataan+";"+riwayat+";"+keputusan;
+
+                Call<Response> call=RetrofitClient.getInstance().getApi().uploadMedcheck(gejala);
                 call.enqueue(new Callback<Response>() {
                     @Override
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                        Toast.makeText(Medcheck.this, "Upload Sukses", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Medcheck.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
 
+                        startActivity(new Intent(getBaseContext(), MainActivity.class));
 //                if(response.body().isStatus()){
 //
 //                }else{
@@ -126,7 +136,7 @@ public class Medcheck extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Response> call, Throwable t) {
-                        Toast.makeText(Medcheck.this, "Upload Gagal", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Medcheck.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

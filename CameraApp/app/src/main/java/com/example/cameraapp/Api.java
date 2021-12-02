@@ -17,4 +17,5 @@ public interface Api {
     Call<Response> uploadMedcheck(
             @Field("EN_MED") String encoded
     );
+
 }
