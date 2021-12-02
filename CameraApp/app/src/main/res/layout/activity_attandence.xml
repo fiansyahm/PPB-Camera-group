@@ -8,14 +8,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="1000dp">
 
         <TextView
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="12:29"/>
+            android:text="12:29" />
 
         <TextView
             android:id="@+id/date"
@@ -38,37 +38,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/workCodeTxt"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/hariTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/spinnerWorkCode"
             android:text="Hari                              Senin" />
+
         <TextView
             android:id="@+id/jamMasukAwalTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/hariTxt"
             android:text="Jam Masuk Awal       06:15" />
+
         <TextView
             android:id="@+id/jamMasukTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/jamMasukAwalTxt"
             android:text="Jam Masuk                 07.00" />
+
         <TextView
             android:id="@+id/jamKeluarTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/jamMasukTxt"
             android:text="Jam Keluar                15.30" />
+
         <TextView
             android:id="@+id/jamKeluarAkhirTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/jamKeluarTxt"
             android:text="Jam Keluar                16.30" />
+
         <TextView
             android:id="@+id/photoTxt"
             android:layout_width="344dp"
@@ -93,14 +99,15 @@
             android:autoSizeMinTextSize="12sp"
             android:autoSizeStepGranularity="2sp"
             android:text="Take" />
+
         <TextView
             android:id="@+id/AttandenceSignatureTxt"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_below="@id/jamKeluarAkhirTxt"
-            android:text="Tanda Tangan"
+            android:layout_marginLeft="50dp"
             android:layout_toRightOf="@id/imageAttandence"
-            android:layout_marginLeft="50dp"/>
+            android:text="Tanda Tangan" />
 
         <com.github.gcacace.signaturepad.views.SignaturePad
             android:id="@+id/signature_pad_attandence"
@@ -110,33 +117,38 @@
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/imageAttandence"
             android:background="@color/purple_200" />
+
         <Button
             android:id="@+id/saveSignature"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_below="@id/AttandenceSignatureTxt"
             android:layout_toRightOf="@id/signature_pad_attandence"
-            android:background="@android:drawable/ic_menu_save"/>
+            android:background="@android:drawable/ic_menu_save" />
+
         <Button
             android:id="@+id/deleteSignature"
             android:layout_width="50dp"
             android:layout_height="35dp"
             android:layout_below="@id/saveSignature"
             android:layout_toRightOf="@id/signature_pad_attandence"
-            android:background="@android:drawable/ic_menu_delete"/>
+            android:background="@android:drawable/ic_menu_delete" />
+
         <CheckBox
             android:id="@+id/wfhCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Work From Home"
             android:layout_below="@id/signature_pad_attandence"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:text="Work From Home" />
 
         <RelativeLayout
+            android:id="@+id/buttonAttandence"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/wfhCheckBox"
             android:layout_centerHorizontal="true">
+
             <Button
                 android:id="@+id/datangbtnAttandence"
                 android:layout_width="wrap_content"
@@ -152,6 +164,23 @@
                 android:layout_toRightOf="@id/datangbtnAttandence"
                 android:text="Pulang" />
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/locationtxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/buttonAttandence"
+            android:layout_marginTop="50dp"
+            android:text="Lokasi Terkni" />
+
+        <fragment
+            android:id="@+id/attandence_GmapView"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="166dp"
+            android:layout_below="@id/locationtxt"
+            android:layout_marginTop="1dp" />
+        />
 
     </RelativeLayout>
 
