@@ -120,19 +120,10 @@
             android:background="@color/purple_200" />
 
         <Button
-            android:id="@+id/saveSignature"
-            android:layout_width="50dp"
-            android:layout_height="35dp"
-            android:layout_below="@id/AttandenceSignatureTxt"
-            android:layout_toRightOf="@id/signature_pad_attandence"
-            android:background="@android:drawable/ic_menu_save"
-            android:onClick="operasi"/>
-
-        <Button
             android:id="@+id/deleteSignature"
             android:layout_width="50dp"
             android:layout_height="35dp"
-            android:layout_below="@id/saveSignature"
+            android:layout_below="@id/AttandenceSignatureTxt"
             android:layout_toRightOf="@id/signature_pad_attandence"
             android:background="@android:drawable/ic_menu_delete"
             android:onClick="operasi"/>
