@@ -19,4 +19,10 @@ public interface Api {
             @Field("EN_MED") String encoded
     );
 
+    @FormUrlEncoded
+    @POST("upload_attendance.php")
+    Call<Response> uploadAttendance(
+            @Field("EN_ATT") String encoded
+    );
+
 }

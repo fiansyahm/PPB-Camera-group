@@ -39,6 +39,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+
 public class AttendanceActivity extends AppCompatActivity {
 
     private ActivityResultLauncher<Intent> launchSomeActivity;
@@ -192,7 +195,26 @@ public class AttendanceActivity extends AppCompatActivity {
 
         dataterkirim+=idUser+";"+namaUser+";"+jabatanUser+";"+currentTime+";"+currentDate+";"+workFromHome+";"+"tepatwaktu"+";"+photo+";"+signature;
 
-        Toast.makeText(AttendanceActivity.this, "Absensi Berhasil", Toast.LENGTH_SHORT).show();
+            Call<Response> call=RetrofitClient.getInstance().getApi().uploadAttendance(dataterkirim);
+            call.enqueue(new Callback<Response>() {
+                @Override
+                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                    Toast.makeText(AttendanceActivity.this, "Absen Sukses", Toast.LENGTH_SHORT).show();
+
+                    startActivity(new Intent(getBaseContext(), AttendanceActivity.class));
+//                if(response.body().isStatus()){
+//
+//                }else{
+//
+//                }
+                }
+
+                @Override
+                public void onFailure(Call<Response> call, Throwable t) {
+                    Toast.makeText(AttendanceActivity.this, "Absen Gagal", Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
     }
 
