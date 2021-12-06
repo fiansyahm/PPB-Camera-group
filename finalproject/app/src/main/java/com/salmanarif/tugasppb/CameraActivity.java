@@ -50,6 +50,7 @@ public class CameraActivity extends AppCompatActivity {
     public byte[] b;
 
     String nmFile;
+    public FacesDetection face;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,8 @@ public class CameraActivity extends AppCompatActivity {
                             bitmap=(Bitmap)bundle.get("data");
                             iv.setImageBitmap(bitmap);
                             BitMapToString(bitmap);
+
+//                            Toast.makeText(CameraActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -84,16 +87,19 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    uploadToServer();
-
-
-
-                    FirebaseStorage storage = FirebaseStorage.getInstance();
-                    StorageReference storageRef = storage.getReference("myImage6"+".png");
-
-
-                    UploadTask uploadTask = storageRef.putBytes(b);
-
+                    String nama=face.active(bitmap,0);
+                    Toast.makeText(CameraActivity.this, "Form Sukses Terkirim"+nama, Toast.LENGTH_SHORT).show();
+                    b1.setText(nama);
+                    //                    uploadToServer();
+//
+//
+//
+//                    FirebaseStorage storage = FirebaseStorage.getInstance();
+//                    StorageReference storageRef = storage.getReference("myImage6"+".png");
+//
+//
+//                    UploadTask uploadTask = storageRef.putBytes(b);
+//
 
                 } catch (Exception e) {
                     e.printStackTrace();
