@@ -22,7 +22,7 @@ public interface Api {
     @FormUrlEncoded
     @POST("upload_attendance.php")
     Call<Response> uploadAttendance(
-            @Field("EN_ATT") String encoded
+            @Field("EN_ATT") String encodedAtt
     );
 
 }

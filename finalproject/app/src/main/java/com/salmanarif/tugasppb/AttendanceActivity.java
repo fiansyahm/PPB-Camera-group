@@ -158,8 +158,8 @@ public class AttendanceActivity extends AppCompatActivity {
     }
 
     void absensi(View v){
-        if(lokasiLatitudeInt!=1||lokasiLongitudeInt!=1){
-            Toast.makeText(AttendanceActivity.this, "Absensi Gagal", Toast.LENGTH_SHORT).show();
+        if(idUser!=null){
+            Toast.makeText(AttendanceActivity.this,"halo:"+lokasiLatitudeInt, Toast.LENGTH_SHORT).show();
         }
         else{
         dataterkirim="";
@@ -193,15 +193,15 @@ public class AttendanceActivity extends AppCompatActivity {
             signature=BitMapToString(mSignaturePad.getSignatureBitmap());
 
 
-        dataterkirim+=idUser+";"+namaUser+";"+jabatanUser+";"+currentTime+";"+currentDate+";"+workFromHome+";"+"tepatwaktu"+";"+photo+";"+signature;
+        dataterkirim=idUser+";"+namaUser+";"+jabatanUser+";"+currentTime+";"+currentDate+";"+workFromHome+";"+"tepatwaktu"+";"+photo+";"+signature;
 
             Call<Response> call=RetrofitClient.getInstance().getApi().uploadAttendance(dataterkirim);
             call.enqueue(new Callback<Response>() {
                 @Override
                 public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                    Toast.makeText(AttendanceActivity.this, "Absen Sukses", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AttendanceActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(getBaseContext(), AttendanceActivity.class));
+                    startActivity(new Intent(getBaseContext(), MainActivity.class));
 //                if(response.body().isStatus()){
 //
 //                }else{
@@ -211,7 +211,7 @@ public class AttendanceActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Response> call, Throwable t) {
-                    Toast.makeText(AttendanceActivity.this, "Absen Gagal", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AttendanceActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
                 }
             });
 
