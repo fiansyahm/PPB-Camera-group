@@ -86,10 +86,14 @@ public class CameraActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 try {
-                    String nama=face.active(bitmap,0);
-                    Toast.makeText(CameraActivity.this, "Form Sukses Terkirim"+nama, Toast.LENGTH_SHORT).show();
+                    FacesDetection detectface=new FacesDetection();
+                    String nama=detectface.active(bitmap,0);
+//                    Toast.makeText(CameraActivity.this, "Form Sukses Terkirim"+nama, Toast.LENGTH_SHORT).show();
                     b1.setText(nama);
+//                    String nama=face.nilai();
+//                    b2.setText("halo");
                     //                    uploadToServer();
 //
 //
