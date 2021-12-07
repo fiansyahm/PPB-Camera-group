@@ -20,8 +20,8 @@ public interface Api {
     );
 
     @FormUrlEncoded
-    @POST("upload_attendance.php")
-    Call<Response> uploadAttendance(
+    @POST("login.php")
+    Call<Response> login(
             @Field("EN_ATT") String encodedAtt
     );
 

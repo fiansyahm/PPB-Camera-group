@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Finalproject">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
             android:name=".AttendanceActivity"
             android:exported="true" />
         <activity
