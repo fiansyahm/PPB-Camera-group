@@ -20,9 +20,24 @@ public interface Api {
     );
 
     @FormUrlEncoded
-    @POST("login.php")
+    @POST("newlogin.php")
     Call<Response> login(
+            @Field("EN_LOGIN") String encodedLogin
+    );
+
+    @FormUrlEncoded
+    @POST("register.php")
+    Call<Response> regis(
+            @Field("EN_REGIS") String encodedRegis
+    );
+
+
+    @FormUrlEncoded
+    @POST("uploadAttendance.php")
+    Call<Response> uploadAttendance(
             @Field("EN_ATT") String encodedAtt
     );
+
+
 
 }

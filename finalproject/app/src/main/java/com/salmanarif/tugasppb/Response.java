@@ -2,13 +2,13 @@ package com.salmanarif.tugasppb;
 
 public class Response {
     private boolean status;
-    private String remark;
+    private String remarks;
 
     public boolean isStatus() {
         return status;
     }
 
     public String getRemark() {
-        return remark;
+        return remarks;
     }
 }
