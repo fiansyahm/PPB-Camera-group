@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
                 send=NameStr+";"+PositionStr+";"+EmailSignUpStr+";"+PasswordLoginStr;
                 uploadToServer(send);
 
-                startActivity(new Intent(getBaseContext(), LoginActivity.class));
+//                startActivity(new Intent(getBaseContext(), LoginActivity.class));
             }
         });
 
@@ -53,11 +53,12 @@ public class RegisterActivity extends AppCompatActivity {
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-//                if(response.body().isStatus()){
-//                    Toast.makeText(RegisterActivity.this,""+ response.body().getRemark(), Toast.LENGTH_SHORT).show();
-//                }else{
-//                    Toast.makeText(RegisterActivity.this, response.body().getRemark(), Toast.LENGTH_SHORT).show();
-//                }
+                if(response.body().isStatus()){
+                    Toast.makeText(RegisterActivity.this,response.body().getRemark(), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getBaseContext(), LoginActivity.class));
+                }else{
+                    Toast.makeText(RegisterActivity.this, response.body().getRemark(), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override

@@ -51,16 +51,17 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-//                if(response.body().isStatus()){
-//                    Toast.makeText(LoginActivity.this,response.body().getRemark(), Toast.LENGTH_SHORT).show();
-//
-//                }else{
-//                    Toast.makeText(LoginActivity.this, response.body().getRemark(), Toast.LENGTH_SHORT).show();
-//                }
+                if(response.body().isStatus()){
+                    Toast.makeText(LoginActivity.this,response.body().getRemark(), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getBaseContext(), MedcheckActivity.class));
+                }else{
+                    Toast.makeText(LoginActivity.this, response.body().getRemark(), Toast.LENGTH_SHORT).show();
+                }
             }
+
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, "Login Gagal lo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Upload Gagal", Toast.LENGTH_SHORT).show();
             }
         });
 

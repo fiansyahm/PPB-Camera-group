@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         baru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(), RegisterActivity.class));
+                startActivity(new Intent(getBaseContext(), LoginActivity.class));
             }
         });
 

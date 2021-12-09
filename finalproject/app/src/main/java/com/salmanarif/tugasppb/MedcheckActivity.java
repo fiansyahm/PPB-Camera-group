@@ -127,7 +127,7 @@ public class MedcheckActivity extends AppCompatActivity {
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                         Toast.makeText(MedcheckActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(getBaseContext(), MainActivity.class));
+                        startActivity(new Intent(getBaseContext(), AttendanceActivity.class));
 //                if(response.body().isStatus()){
 //
 //                }else{

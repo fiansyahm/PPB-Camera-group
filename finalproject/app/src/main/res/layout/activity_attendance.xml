@@ -161,17 +161,6 @@
                 android:onClick="operasi"/>
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/locationtxt"
-            android:layout_width="104dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/buttonAttandence"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:text="Lokasi Terkni" />
-
-
-
     </RelativeLayout>
 
 </ScrollView>
