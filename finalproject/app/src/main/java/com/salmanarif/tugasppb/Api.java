@@ -38,6 +38,17 @@ public interface Api {
             @Field("EN_ATT") String encodedAtt
     );
 
+    @FormUrlEncoded
+    @POST("schedule.php")
+    Call<Response> schedule(
+            @Field("EN_SCH") String encodedSch
+    );
+
+    @FormUrlEncoded
+    @POST("scheduledetail.php")
+    Call<Response> scheduledetail(
+            @Field("EN_SCHDET") String encodedSchdet
+    );
 
 
 }

@@ -53,7 +53,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 if(response.body().isStatus()){
                     Toast.makeText(LoginActivity.this,response.body().getRemark(), Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getBaseContext(), MedcheckActivity.class));
+//                    startActivity(new Intent(getBaseContext(), MedcheckActivity.class));
+
+                    String id=response.body().getID();
+                    String nama=response.body().getNama();
+                    String posisi=response.body().getPosisi();
+                    Intent i = new Intent(LoginActivity.this, MedcheckActivity.class);
+                    i.putExtra("id",id);
+                    i.putExtra("nama",nama);
+                    i.putExtra("posisi",posisi);
+                    startActivity(i);
                 }else{
                     Toast.makeText(LoginActivity.this, response.body().getRemark(), Toast.LENGTH_SHORT).show();
                 }

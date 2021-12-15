@@ -23,18 +23,24 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
 
 import java.io.ByteArrayOutputStream;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -46,7 +52,6 @@ public class AttendanceActivity extends AppCompatActivity {
 
     private ActivityResultLauncher<Intent> launchSomeActivity;
     private SignaturePad mSignaturePad;
-
 
     //    Location
     private LocationManager mylocationManager;
@@ -61,33 +66,127 @@ public class AttendanceActivity extends AppCompatActivity {
     private String dataterkirim;
 
     //    profil user
-    private String idUser;
-    private String namaUser;
-    private String jabatanUser;
-    private String workFromHome;
+    private String idUser,namaUser,jabatanUser,workFromHome;
 
 //    kamera
     public byte[] b;
     private String imagestringcode;
     private Bitmap bitmap;
-    private String photo;
-    private String signature;
+    private String photo,signature,currentTime,currentDate;
+
+//    TextView
+    private TextView dateNow;
+    private Spinner spinner;
+
+//    schedule
+    private int count=0;
+    private ArrayList<String> list = new ArrayList<String>();
+//    String list[]={"","Reguler","Bulan Puasa"};
+    private TextView JamMasukAwal,JamMasuk,JamPulang,JamPulangAkhir;
+    private String listScheduledet[];
+    private String absensi;
+    private int absensiEnable=0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
-        String list[]={"Reguler","Bulan Puasa"};
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerWorkCode);
-        ArrayAdapter<String> AdapterList = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,list);
-        spinner.setAdapter(AdapterList);
+        list.add("NONE");
 
-//        date
-        Date cDate = new Date();
-        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
-        TextView datetxt=findViewById(R.id.date);
-        datetxt.setText(fDate);
+        currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+        currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        dateNow=findViewById(R.id.date);
+        dateNow.setText(currentDate);
+
+        TextView datetxt=findViewById(R.id.hariTextView);
+        datetxt.setText("Today: "+new SimpleDateFormat("EEEE", Locale.getDefault()).format(new Date()));
+
+
+        if (count==0){
+            count=1;
+            Call<Response> call=RetrofitClient.getInstance().getApi().schedule("h;h");
+            call.enqueue(new Callback<Response>() {
+                @Override
+                public void onResponse(@NonNull Call<Response> call, @NonNull retrofit2.Response<Response> response) {
+
+                if(response.body().isStatus()){
+                    String listSchedule[]=response.body().getSchedule();
+                    for(int x=0;x<response.body().getTotalrow();x++)
+                        list.add(listSchedule[x]);
+//                    Toast.makeText(AttendanceActivity.this,listSchedule[2], Toast.LENGTH_SHORT).show();
+                }else{
+
+                }
+                }
+
+                @Override
+                public void onFailure(@NonNull Call<Response> call, @NonNull Throwable t) {
+                    Toast.makeText(AttendanceActivity.this, "Form Gagal Terkirim", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+
+
+
+        spinner = (Spinner) findViewById(R.id.spinnerWorkCode);
+        ArrayAdapter<String> AdapterList = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,list);
+        AdapterList.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(AdapterList);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                if(0== position){
+                    JamMasukAwal=findViewById(R.id.jamMasukAwalTxt);
+                    JamMasukAwal.setText("Jam Masuk Awal       :");
+                    JamMasuk=findViewById(R.id.jamMasukTxt);
+                    JamMasuk.setText("Jam Masuk       :");
+                    JamPulang=findViewById(R.id.jamKeluarTxt);
+                    JamPulang.setText("Jam Pulang       :");
+                    JamPulangAkhir=findViewById(R.id.jamKeluarAkhirTxt);
+                    JamPulangAkhir.setText("Jam Pulang Akhir       :");
+                }
+                else
+                {
+                    Call<Response> call=RetrofitClient.getInstance().getApi().scheduledetail(""+position);
+                    call.enqueue(new Callback<Response>() {
+                        @Override
+                        public void onResponse(@NonNull Call<Response> call, @NonNull retrofit2.Response<Response> response) {
+
+                            if(response.body().isStatus()){
+                                Toast.makeText(AttendanceActivity.this, "Sukses MENDAPATKAN WAKTU", Toast.LENGTH_SHORT).show();
+                                listScheduledet=response.body().getSchedule();
+
+                                JamMasukAwal=findViewById(R.id.jamMasukAwalTxt);
+                                JamMasukAwal.setText("Jam Masuk Awal       "+listScheduledet[0]);
+                                JamMasuk=findViewById(R.id.jamMasukTxt);
+                                JamMasuk.setText("Jam Masuk       "+listScheduledet[1]);
+                                JamPulang=findViewById(R.id.jamKeluarTxt);
+                                JamPulang.setText("Jam Pulang       "+listScheduledet[2]);
+                                JamPulangAkhir=findViewById(R.id.jamKeluarAkhirTxt);
+                                JamPulangAkhir.setText("Jam Pulang Akhir       "+listScheduledet[3]);
+                            }else{
+
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(@NonNull Call<Response> call, @NonNull Throwable t) {
+                            Toast.makeText(AttendanceActivity.this, "GAGAL MENDAPATKAN WAKTU", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
+
 
 //camera
         launchSomeActivity = registerForActivityResult(
@@ -158,19 +257,55 @@ public class AttendanceActivity extends AppCompatActivity {
     }
 
     void absensi(View v){
-        if(idUser!=null){
+
+        DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+        Date date0,date1,date2 = null;
+        try {
+//            date0 = (Date)formatter.parse(new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date()));
+            date0 = (Date)formatter.parse("12:00:00");
+            date1 = (Date)formatter.parse(listScheduledet[0]);
+            date2 = (Date)formatter.parse(listScheduledet[3]);
+
+            if (date0.after(date1) && date0.before(date2)) {
+                absensiEnable=1;
+
+                if (v.getId()==R.id.datangbtnAttandence){
+                    absensi="Datang Terlambat";
+                }
+                else absensi="Pulang Awal";
+
+            }
+            else{
+                absensiEnable=0;
+                if (v.getId()==R.id.datangbtnAttandence){
+                    absensi="Datang Tepat Waktu";
+                }
+                else absensi="Pulang Tepat Waktu";
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+
+        if(absensiEnable==0){
             Toast.makeText(AttendanceActivity.this,"halo:"+lokasiLatitudeInt, Toast.LENGTH_SHORT).show();
         }
         else{
-        dataterkirim="";
+
+            dataterkirim="";
 //        sudah                                     belum
 //        id+nama+jabatan+waktu+tanggal+wfo/wfh+    telat/tepatWaktu+foto+tandatangan
 
-        idUser="1";
-        namaUser="Salman";
-        jabatanUser="Mahasiswa";
-        String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
-        String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+            Bundle extras = getIntent().getExtras();
+            if (extras != null) {
+                idUser=extras.getString("id");
+                namaUser=extras.getString("nama");
+                jabatanUser=extras.getString("posisi");
+            }
+
+
         CheckBox wfh=findViewById(R.id.wfhCheckBox);
 
 
@@ -180,28 +315,22 @@ public class AttendanceActivity extends AppCompatActivity {
             workFromHome="Tidak";
         }
 
-        if (v.getId()==R.id.datangbtnAttandence){
-//             datang
 
-        }
-        else {
-//            pulang
 
-        }
 
 //        tandatangan
             signature=BitMapToString(mSignaturePad.getSignatureBitmap());
 
 
-        dataterkirim=idUser+";"+namaUser+";"+jabatanUser+";"+currentTime+";"+currentDate+";"+workFromHome+";"+"tepatwaktu"+";"+photo+";"+signature;
+        dataterkirim=idUser+";"+namaUser+";"+jabatanUser+";"+currentTime+";"+currentDate+";"+workFromHome+";"+absensi+";"+photo+";"+signature;
 
             Call<Response> call=RetrofitClient.getInstance().getApi().uploadAttendance(dataterkirim);
             call.enqueue(new Callback<Response>() {
                 @Override
-                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                public void onResponse(@NonNull Call<Response> call, @NonNull retrofit2.Response<Response> response) {
                     Toast.makeText(AttendanceActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(getBaseContext(), MainActivity.class));
+//                    startActivity(new Intent(getBaseContext(), MainActivity.class));
 //                if(response.body().isStatus()){
 //
 //                }else{
@@ -210,8 +339,8 @@ public class AttendanceActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onFailure(Call<Response> call, Throwable t) {
-                    Toast.makeText(AttendanceActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
+                public void onFailure(@NonNull Call<Response> call, @NonNull Throwable t) {
+                    Toast.makeText(AttendanceActivity.this, "Form Gagal Terkirim", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -222,37 +351,33 @@ public class AttendanceActivity extends AppCompatActivity {
     @SuppressLint("MissingSuperCall")
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_LOCATION: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == MY_PERMISSIONS_REQUEST_LOCATION) {// If request is cancelled, the result arrays are empty.
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    // permission was granted, yay! Do the
-                    // location-related task you need to do.
-                    if (ContextCompat.checkSelfPermission(this,
-                            Manifest.permission.ACCESS_FINE_LOCATION)
-                            == PackageManager.PERMISSION_GRANTED) {
+                // permission was granted, yay! Do the
+                // location-related task you need to do.
+                if (ContextCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_FINE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED) {
 
-                        //Request location updates:
-                        mylocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 200, mylocationListener);
-                    }
-
-                } else {
-
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-
+                    //Request location updates:
+                    mylocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 200, mylocationListener);
                 }
-                return;
-            }
 
+            } else {
+
+                // permission denied, boo! Disable the
+                // functionality that depends on this permission.
+
+            }
+            return;
         }
     }
 
     private class lokasiListener implements LocationListener {
 
-        private TextView txtLat, txtLong;
+
 
         @Override
         public void onLocationChanged(@NonNull Location location) {

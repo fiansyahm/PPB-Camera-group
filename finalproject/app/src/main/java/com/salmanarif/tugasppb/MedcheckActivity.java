@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -20,10 +21,21 @@ public class MedcheckActivity extends AppCompatActivity {
     private CheckBox gejala1, gejala2, gejala3,gejala4,gejala5,gejala6,gejala7,gejala8,gejala9;
     private Button kirim;
     private String gejala;
+    private String Nama;
+    private TextView helloTv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medcheck);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            Nama = extras.getString("nama");
+            helloTv=findViewById(R.id.hello);
+            helloTv.setText("Selamat Datang "+Nama);
+
+            //The key argument here must match that used in the other activity
+        }
 
         gejala1 = findViewById(R.id.gejala1);
         gejala2 = findViewById(R.id.gejala2);
@@ -125,9 +137,14 @@ public class MedcheckActivity extends AppCompatActivity {
                 call.enqueue(new Callback<Response>() {
                     @Override
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                        Toast.makeText(MedcheckActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MedcheckActivity.this, response.body().getRemark(), Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(getBaseContext(), AttendanceActivity.class));
+//                        startActivity(new Intent(getBaseContext(), AttendanceActivity.class));
+                        Intent i = new Intent(MedcheckActivity.this, AttendanceActivity.class);
+                        i.putExtra("id",extras.getString("id"));
+                        i.putExtra("nama",extras.getString("nama"));
+                        i.putExtra("posisi",extras.getString("posisi"));
+                        startActivity(i);
 //                if(response.body().isStatus()){
 //
 //                }else{
@@ -137,7 +154,7 @@ public class MedcheckActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Response> call, Throwable t) {
-                        Toast.makeText(MedcheckActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MedcheckActivity.this, "Form Gagal Terkirim", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

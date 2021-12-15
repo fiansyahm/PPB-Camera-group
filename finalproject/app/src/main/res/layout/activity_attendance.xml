@@ -41,7 +41,7 @@
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/hariTxt"
+            android:id="@+id/hariTextView"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/spinnerWorkCode"
@@ -51,29 +51,29 @@
             android:id="@+id/jamMasukAwalTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
-            android:layout_below="@id/hariTxt"
-            android:text="Jam Masuk Awal       06:15" />
+            android:layout_below="@id/hariTextView"
+            android:text="Jam Masuk Awal1       06:15" />
 
         <TextView
             android:id="@+id/jamMasukTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/jamMasukAwalTxt"
-            android:text="Jam Masuk                 07.00" />
+            android:text="Jam Masuk1                 07.00" />
 
         <TextView
             android:id="@+id/jamKeluarTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/jamMasukTxt"
-            android:text="Jam Keluar                15.30" />
+            android:text="Jam Keluar1                15.30" />
 
         <TextView
             android:id="@+id/jamKeluarAkhirTxt"
             android:layout_width="344dp"
             android:layout_height="37dp"
             android:layout_below="@id/jamKeluarTxt"
-            android:text="Jam Keluar                16.30" />
+            android:text="Jam Keluar Akhir1          16.30" />
 
         <TextView
             android:id="@+id/photoTxt"
