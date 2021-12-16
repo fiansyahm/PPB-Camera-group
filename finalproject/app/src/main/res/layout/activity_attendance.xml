@@ -98,8 +98,8 @@
             android:autoSizeMaxTextSize="100sp"
             android:autoSizeMinTextSize="12sp"
             android:autoSizeStepGranularity="2sp"
-            android:text="Take"
-            android:onClick="operasi"/>
+            android:onClick="operasi"
+            android:text="Take" />
 
         <TextView
             android:id="@+id/AttandenceSignatureTxt"
@@ -148,8 +148,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginLeft="70dp"
-                android:text="Datang"
-                android:onClick="operasi"/>
+                android:onClick="operasi"
+                android:text="Datang" />
 
             <Button
                 android:id="@+id/pulangbtnAttandence"
@@ -157,9 +157,21 @@
                 android:layout_height="35dp"
                 android:layout_marginLeft="50dp"
                 android:layout_toRightOf="@id/datangbtnAttandence"
-                android:text="Pulang"
-                android:onClick="operasi"/>
+                android:onClick="operasi"
+                android:text="Pulang" />
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/Izin"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_below="@+id/buttonAttandence"
+            android:layout_alignBottom="@+id/buttonAttandence"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="-73dp"
+            android:onClick="operasi"
+            android:text="Izin" />
 
     </RelativeLayout>
 
