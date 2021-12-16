@@ -70,7 +70,7 @@ public class MedcheckActivity extends AppCompatActivity {
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gejala="1;";
+                gejala=extras.getString("id")+";";
 
                 // Melihat Status Kondisi Pada Pilihan Menu Ayam Goreng
                 if(gejala1.isChecked()){
