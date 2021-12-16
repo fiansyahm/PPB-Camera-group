@@ -69,9 +69,17 @@ public class listAttendanceActivity extends AppCompatActivity {
             @SuppressLint("Range")
             public void onItemClick(AdapterView<?> parent, View item, int position, long rowID) {
 
-
-
-
+                Bundle extras = getIntent().getExtras();
+                Intent i = new Intent(listAttendanceActivity.this, DetailAttendanceActivity.class);
+                i.putExtra("id",extras.getString("id"));
+                i.putExtra("nama",extras.getString("nama"));
+                i.putExtra("posisi",extras.getString("posisi"));
+                i.putExtra("waktu",currentdatetime[position]);
+                i.putExtra("workfromhome",workfromhome[position]);
+                i.putExtra("statusabsen",statusabsen[position]);
+                i.putExtra("photo",photo[position]);
+                i.putExtra("signature",signature[position]);
+                startActivity(i);
 
                 //                Cursor cur = dbku.rawQuery("select * from kontak",null);
 //                int i=0;if(cur.getCount() > 0) cur.moveToFirst();

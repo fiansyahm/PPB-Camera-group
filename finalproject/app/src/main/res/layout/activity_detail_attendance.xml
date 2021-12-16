@@ -1,9 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailAttendanceActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/detailnamatv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="192dp"
+        android:text="Nama"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/detailnamastr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:layout_toRightOf="@id/detailnamatv"
+        />
+
+    <TextView
+        android:id="@+id/detailjabatantv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="30dp"
+        android:text="Jabatan"
+        android:textSize="20sp"
+        android:layout_below="@id/detailnamatv"/>
+
+    <TextView
+        android:id="@+id/detailjabatanstr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:layout_below="@id/detailnamatv"
+        android:layout_toRightOf="@id/detailjabatantv"
+       />
+
+    <TextView
+        android:id="@+id/detailwaktutv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="30dp"
+        android:text="Waktu"
+        android:textSize="20sp"
+        android:layout_below="@id/detailjabatantv"/>
+
+    <TextView
+        android:id="@+id/detailwaktustr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="57dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:layout_below="@id/detailjabatantv"
+        android:layout_toRightOf="@id/detailwaktutv"/>
+    <TextView
+        android:id="@+id/detailworkfromhometv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="30dp"
+        android:text="WFH"
+        android:textSize="20sp"
+        android:layout_below="@id/detailwaktutv"/>
+
+    <TextView
+        android:id="@+id/detailworkfromhomestr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="57dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:layout_below="@id/detailwaktutv"
+        android:layout_toRightOf="@id/detailworkfromhometv"/>
+    <TextView
+        android:id="@+id/detailstatusabsensitv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="30dp"
+        android:text="Status"
+        android:textSize="20sp"
+        android:layout_below="@id/detailworkfromhometv"/>
+
+    <TextView
+        android:id="@+id/detailstatusabsensistr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="57dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:layout_below="@id/detailworkfromhometv"
+        android:layout_toRightOf="@id/detailstatusabsensitv"/>
+
+    <TextView
+        android:id="@+id/detailfototv"
+        android:layout_width="134dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/detailstatusabsensitv"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Foto"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/detailsignaturetv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="57dp"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:layout_below="@id/detailstatusabsensitv"
+        android:text="Tanda Tangan"
+        android:layout_toRightOf="@id/detailfototv"/>
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView3"-->
+<!--        android:layout_width="189dp"-->
+<!--        android:layout_height="170dp"-->
+<!--        android:layout_below="@id/detailstatusabsensitv"-->
+<!--        android:layout_marginTop="63dp"-->
+<!--        tools:srcCompat="@tools:sample/avatars" />-->
+
+
+</RelativeLayout>
