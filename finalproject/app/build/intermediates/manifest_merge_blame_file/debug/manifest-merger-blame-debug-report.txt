@@ -1,0 +1,272 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.salmanarif.tugasppb"
+4    android:versionCode="4"
+5    android:versionName="1.3" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+11-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:6:5-81
+11-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:6:22-78
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:7:5-79
+12-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.CAMERA" />
+13-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:8:5-65
+13-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:8:22-62
+14
+15    <uses-feature android:name="android.hardware.camera" />
+15-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:10:5-60
+15-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:10:19-57
+16
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+17-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:12:5-81
+17-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:12:22-78
+18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+18-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:13:5-71
+18-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:13:22-68
+19    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+19-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:14:5-72
+19-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:14:22-69
+20    <uses-permission android:name="android.permission.USE_FINGERPRINT" /> <!-- Include required permissions for Google Maps API to run. -->
+20-->[androidx.biometric:biometric:1.0.1] C:\Users\User\.gradle\caches\transforms-3\463934c5746b94a567a0d3e79644082b\transformed\biometric-1.0.1\AndroidManifest.xml:25:5-74
+20-->[androidx.biometric:biometric:1.0.1] C:\Users\User\.gradle\caches\transforms-3\463934c5746b94a567a0d3e79644082b\transformed\biometric-1.0.1\AndroidManifest.xml:25:22-71
+21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+21-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:23:5-79
+21-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:23:22-76
+22    <uses-permission android:name="android.permission.INTERNET" />
+22-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:24:5-67
+22-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:24:22-64
+23
+24    <uses-feature
+24-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:26:5-28:35
+25        android:glEsVersion="0x00020000"
+25-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:27:9-41
+26        android:required="true" />
+26-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:28:9-32
+27
+28    <queries>
+28-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:30:5-34:15
+29
+30        <!-- Needs to be explicitly declared on Android R+ -->
+31        <package android:name="com.google.android.apps.maps" />
+31-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:33:9-64
+31-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:33:18-61
+32    </queries>
+33
+34    <application
+34-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:16:5-56:19
+35        android:allowBackup="true"
+35-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:17:9-35
+36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+36-->[androidx.core:core:1.5.0] C:\Users\User\.gradle\caches\transforms-3\fafb8d32a6b6b554ceb0c63b301e5148\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+37        android:debuggable="true"
+38        android:icon="@mipmap/ic_launcher"
+38-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:18:9-43
+39        android:label="@string/app_name"
+39-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:19:9-41
+40        android:roundIcon="@mipmap/ic_launcher_round"
+40-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:20:9-54
+41        android:supportsRtl="true"
+41-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:21:9-35
+42        android:testOnly="true"
+43        android:theme="@style/Theme.Finalproject" >
+43-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:22:9-50
+44        <activity
+44-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:23:9-25:40
+45            android:name="com.salmanarif.tugasppb.DetailAttendanceActivity"
+45-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:24:13-53
+46            android:exported="false" />
+46-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:25:13-37
+47        <activity
+47-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:26:9-28:40
+48            android:name="com.salmanarif.tugasppb.listAttendanceActivity"
+48-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:27:13-51
+49            android:exported="false" />
+49-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:28:13-37
+50        <activity
+50-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:29:9-31:40
+51            android:name="com.salmanarif.tugasppb.FingerprintActivity"
+51-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:30:13-48
+52            android:exported="false" />
+52-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:31:13-37
+53        <activity
+53-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:32:9-34:39
+54            android:name="com.salmanarif.tugasppb.RegisterActivity"
+54-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:33:13-45
+55            android:exported="true" />
+55-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:34:13-36
+56        <activity
+56-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:35:9-37:39
+57            android:name="com.salmanarif.tugasppb.LoginActivity"
+57-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:36:13-42
+58            android:exported="true" />
+58-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:37:13-36
+59        <activity
+59-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:38:9-40:39
+60            android:name="com.salmanarif.tugasppb.AttendanceActivity"
+60-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:39:13-47
+61            android:exported="true" />
+61-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:40:13-36
+62        <activity
+62-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:41:9-43:39
+63            android:name="com.salmanarif.tugasppb.CameraActivity"
+63-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:42:13-43
+64            android:exported="true" />
+64-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:43:13-36
+65        <activity
+65-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:44:9-46:39
+66            android:name="com.salmanarif.tugasppb.MedcheckActivity"
+66-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:45:13-45
+67            android:exported="true" />
+67-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:46:13-36
+68        <activity
+68-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:47:9-55:20
+69            android:name="com.salmanarif.tugasppb.MainActivity"
+69-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:48:13-41
+70            android:exported="true" >
+70-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:49:13-36
+71            <intent-filter>
+71-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:50:13-54:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:51:17-69
+72-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:51:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:53:17-77
+74-->C:\Users\User\Documents\GitHub\PPB-Camera-group\finalproject\app\src\main\AndroidManifest.xml:53:27-74
+75            </intent-filter>
+76        </activity>
+77        <activity
+77-->[androidx.biometric:biometric:1.0.1] C:\Users\User\.gradle\caches\transforms-3\463934c5746b94a567a0d3e79644082b\transformed\biometric-1.0.1\AndroidManifest.xml:28:9-31:67
+78            android:name="androidx.biometric.DeviceCredentialHandlerActivity"
+78-->[androidx.biometric:biometric:1.0.1] C:\Users\User\.gradle\caches\transforms-3\463934c5746b94a567a0d3e79644082b\transformed\biometric-1.0.1\AndroidManifest.xml:29:13-78
+79            android:exported="true"
+79-->[androidx.biometric:biometric:1.0.1] C:\Users\User\.gradle\caches\transforms-3\463934c5746b94a567a0d3e79644082b\transformed\biometric-1.0.1\AndroidManifest.xml:30:13-36
+80            android:theme="@style/DeviceCredentialHandlerTheme" /> <!-- Needs to be explicitly declared on P+ -->
+80-->[androidx.biometric:biometric:1.0.1] C:\Users\User\.gradle\caches\transforms-3\463934c5746b94a567a0d3e79644082b\transformed\biometric-1.0.1\AndroidManifest.xml:31:13-64
+81        <uses-library
+81-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:39:9-41:40
+82            android:name="org.apache.http.legacy"
+82-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:40:13-50
+83            android:required="false" />
+83-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\User\.gradle\caches\transforms-3\3e680021d8aca0e8760a568814aeedbd\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:41:13-37
+84
+85        <service
+85-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\User\.gradle\caches\transforms-3\b4fc555424b31b6bb1f286a4d9db67d4\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:30:9-36:19
+86            android:name="com.google.firebase.components.ComponentDiscoveryService"
+86-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\User\.gradle\caches\transforms-3\b4fc555424b31b6bb1f286a4d9db67d4\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:31:13-84
+87            android:directBootAware="true"
+87-->[com.google.firebase:firebase-common:19.3.0] C:\Users\User\.gradle\caches\transforms-3\6ee6a790d2bf5a9d0552704560f162e8\transformed\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+88            android:exported="false" >
+88-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\User\.gradle\caches\transforms-3\b4fc555424b31b6bb1f286a4d9db67d4\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:32:13-37
+89            <meta-data
+89-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\User\.gradle\caches\transforms-3\b4fc555424b31b6bb1f286a4d9db67d4\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:33:13-35:85
+90                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+90-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\User\.gradle\caches\transforms-3\b4fc555424b31b6bb1f286a4d9db67d4\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:34:17-107
+91                android:value="com.google.firebase.components.ComponentRegistrar" />
+91-->[com.google.firebase:firebase-storage:19.1.1] C:\Users\User\.gradle\caches\transforms-3\b4fc555424b31b6bb1f286a4d9db67d4\transformed\jetified-firebase-storage-19.1.1\AndroidManifest.xml:35:17-82
+92        </service>
+93        <service
+93-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\User\.gradle\caches\transforms-3\a5ce68c971a0cfbfaff5ecb331ed5f7b\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:9:9-15:19
+94            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+94-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\User\.gradle\caches\transforms-3\a5ce68c971a0cfbfaff5ecb331ed5f7b\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:10:13-91
+95            android:directBootAware="true"
+95-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:17:13-43
+96            android:exported="false" >
+96-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\User\.gradle\caches\transforms-3\a5ce68c971a0cfbfaff5ecb331ed5f7b\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:11:13-37
+97            <meta-data
+97-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\User\.gradle\caches\transforms-3\a5ce68c971a0cfbfaff5ecb331ed5f7b\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:12:13-14:85
+98                android:name="com.google.firebase.components:com.google.mlkit.vision.face.internal.FaceRegistrar"
+98-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\User\.gradle\caches\transforms-3\a5ce68c971a0cfbfaff5ecb331ed5f7b\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:13:17-114
+99                android:value="com.google.firebase.components.ComponentRegistrar" />
+99-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\User\.gradle\caches\transforms-3\a5ce68c971a0cfbfaff5ecb331ed5f7b\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:14:17-82
+100            <meta-data
+100-->[com.google.mlkit:vision-common:16.5.0] C:\Users\User\.gradle\caches\transforms-3\e2332a68fdada4c6cf8cf24b788a3181\transformed\jetified-vision-common-16.5.0\AndroidManifest.xml:12:13-14:85
+101                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+101-->[com.google.mlkit:vision-common:16.5.0] C:\Users\User\.gradle\caches\transforms-3\e2332a68fdada4c6cf8cf24b788a3181\transformed\jetified-vision-common-16.5.0\AndroidManifest.xml:13:17-124
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[com.google.mlkit:vision-common:16.5.0] C:\Users\User\.gradle\caches\transforms-3\e2332a68fdada4c6cf8cf24b788a3181\transformed\jetified-vision-common-16.5.0\AndroidManifest.xml:14:17-82
+103            <meta-data
+103-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:20:13-22:85
+104                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+104-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:21:17-120
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:22:17-82
+106        </service>
+107
+108        <provider
+108-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:9:9-13:38
+109            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+109-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:10:13-78
+110            android:authorities="com.salmanarif.tugasppb.mlkitinitprovider"
+110-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:11:13-69
+111            android:exported="false"
+111-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:12:13-37
+112            android:initOrder="99" />
+112-->[com.google.mlkit:common:17.2.0] C:\Users\User\.gradle\caches\transforms-3\8d1b3a6fddb11e7ca3ecb7bfdf5338fc\transformed\jetified-common-17.2.0\AndroidManifest.xml:13:13-35
+113
+114        <activity
+114-->[com.google.android.gms:play-services-base:17.6.0] C:\Users\User\.gradle\caches\transforms-3\6803600f28b7b96b5e36c8379d70ab46\transformed\jetified-play-services-base-17.6.0\AndroidManifest.xml:23:9-26:75
+115            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+115-->[com.google.android.gms:play-services-base:17.6.0] C:\Users\User\.gradle\caches\transforms-3\6803600f28b7b96b5e36c8379d70ab46\transformed\jetified-play-services-base-17.6.0\AndroidManifest.xml:24:13-79
+116            android:exported="false"
+116-->[com.google.android.gms:play-services-base:17.6.0] C:\Users\User\.gradle\caches\transforms-3\6803600f28b7b96b5e36c8379d70ab46\transformed\jetified-play-services-base-17.6.0\AndroidManifest.xml:25:13-37
+117            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+117-->[com.google.android.gms:play-services-base:17.6.0] C:\Users\User\.gradle\caches\transforms-3\6803600f28b7b96b5e36c8379d70ab46\transformed\jetified-play-services-base-17.6.0\AndroidManifest.xml:26:13-72
+118
+119        <provider
+119-->[com.google.firebase:firebase-common:19.3.0] C:\Users\User\.gradle\caches\transforms-3\6ee6a790d2bf5a9d0552704560f162e8\transformed\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+120            android:name="com.google.firebase.provider.FirebaseInitProvider"
+120-->[com.google.firebase:firebase-common:19.3.0] C:\Users\User\.gradle\caches\transforms-3\6ee6a790d2bf5a9d0552704560f162e8\transformed\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+121            android:authorities="com.salmanarif.tugasppb.firebaseinitprovider"
+121-->[com.google.firebase:firebase-common:19.3.0] C:\Users\User\.gradle\caches\transforms-3\6ee6a790d2bf5a9d0552704560f162e8\transformed\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+122            android:exported="false"
+122-->[com.google.firebase:firebase-common:19.3.0] C:\Users\User\.gradle\caches\transforms-3\6ee6a790d2bf5a9d0552704560f162e8\transformed\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+123            android:initOrder="100" />
+123-->[com.google.firebase:firebase-common:19.3.0] C:\Users\User\.gradle\caches\transforms-3\6ee6a790d2bf5a9d0552704560f162e8\transformed\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+124
+125        <meta-data
+125-->[com.google.android.gms:play-services-basement:17.6.0] C:\Users\User\.gradle\caches\transforms-3\94af7708bfbe92adeb8811ae6db1efa7\transformed\jetified-play-services-basement-17.6.0\AndroidManifest.xml:23:9-25:69
+126            android:name="com.google.android.gms.version"
+126-->[com.google.android.gms:play-services-basement:17.6.0] C:\Users\User\.gradle\caches\transforms-3\94af7708bfbe92adeb8811ae6db1efa7\transformed\jetified-play-services-basement-17.6.0\AndroidManifest.xml:24:13-58
+127            android:value="@integer/google_play_services_version" />
+127-->[com.google.android.gms:play-services-basement:17.6.0] C:\Users\User\.gradle\caches\transforms-3\94af7708bfbe92adeb8811ae6db1efa7\transformed\jetified-play-services-basement-17.6.0\AndroidManifest.xml:25:13-66
+128
+129        <service
+129-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\User\.gradle\caches\transforms-3\e795b0e9ff0809d6a09bf7c609d23344\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+130            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+130-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\User\.gradle\caches\transforms-3\e795b0e9ff0809d6a09bf7c609d23344\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+131            android:exported="false" >
+131-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\User\.gradle\caches\transforms-3\e795b0e9ff0809d6a09bf7c609d23344\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+132            <meta-data
+132-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\User\.gradle\caches\transforms-3\e795b0e9ff0809d6a09bf7c609d23344\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+133                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+133-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\User\.gradle\caches\transforms-3\e795b0e9ff0809d6a09bf7c609d23344\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+134                android:value="cct" />
+134-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\User\.gradle\caches\transforms-3\e795b0e9ff0809d6a09bf7c609d23344\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+135        </service>
+136        <service
+136-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-3\b997f5432117bc3a7d4b1029b7c1e0bc\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:26:9-30:19
+137            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+137-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-3\b997f5432117bc3a7d4b1029b7c1e0bc\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:27:13-117
+138            android:exported="false"
+138-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-3\b997f5432117bc3a7d4b1029b7c1e0bc\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:28:13-37
+139            android:permission="android.permission.BIND_JOB_SERVICE" >
+139-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-3\b997f5432117bc3a7d4b1029b7c1e0bc\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:29:13-69
+140        </service>
+141
+142        <receiver
+142-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-3\b997f5432117bc3a7d4b1029b7c1e0bc\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:32:9-34:40
+143            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+143-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-3\b997f5432117bc3a7d4b1029b7c1e0bc\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:33:13-132
+144            android:exported="false" />
+144-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\User\.gradle\caches\transforms-3\b997f5432117bc3a7d4b1029b7c1e0bc\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:34:13-37
+145    </application>
+146
+147</manifest>
