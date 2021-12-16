@@ -33,9 +33,9 @@ public interface Api {
 
 
     @FormUrlEncoded
-    @POST("uploadAttendance.php")
+    @POST("upload_attendance.php")
     Call<Response> uploadAttendance(
-            @Field("EN_ATT") String encodedAtt
+            @Field("EN_ATTENDANCE") String encodedAtt
     );
 
     @FormUrlEncoded
@@ -48,6 +48,12 @@ public interface Api {
     @POST("scheduledetail.php")
     Call<Response> scheduledetail(
             @Field("EN_SCHDET") String encodedSchdet
+    );
+
+    @FormUrlEncoded
+    @POST("attendance.php")
+    Call<Response> attendance(
+            @Field("EN_ATT") String encodedAtt
     );
 
 

@@ -102,7 +102,6 @@ public class AttendanceActivity extends AppCompatActivity {
         TextView datetxt=findViewById(R.id.hariTextView);
         datetxt.setText("Today: "+new SimpleDateFormat("EEEE", Locale.getDefault()).format(new Date()));
 
-
         if (count==0){
             count=1;
             Call<Response> call=RetrofitClient.getInstance().getApi().schedule("h;h");
@@ -248,7 +247,17 @@ public class AttendanceActivity extends AppCompatActivity {
             case R.id.deleteSignature:mSignaturePad.clear();break;
             case R.id.datangbtnAttandence:absensi(v);break;
             case R.id.pulangbtnAttandence:absensi(v);break;
+            case R.id.detailbtnAttandence:detaillist();break;
         }
+    }
+
+    void detaillist(){
+        Intent i = new Intent(AttendanceActivity.this, listAttendanceActivity.class);
+        Bundle extras = getIntent().getExtras();
+        i.putExtra("id",extras.getString("id"));
+        i.putExtra("nama",extras.getString("nama"));
+        i.putExtra("posisi",extras.getString("posisi"));
+        startActivity(i);
     }
 
     void uploadFoto(){
@@ -288,9 +297,17 @@ public class AttendanceActivity extends AppCompatActivity {
         }
 
 
+        CheckBox wfh=findViewById(R.id.wfhCheckBox);
 
-        if(absensiEnable==0){
-            Toast.makeText(AttendanceActivity.this,"halo:"+lokasiLatitudeInt, Toast.LENGTH_SHORT).show();
+
+        if(wfh.isChecked()){
+            workFromHome="Ya";
+        }else if(!wfh.isChecked()){
+            workFromHome="Tidak";
+        }
+
+        if(absensiEnable==0&&lokasiLatitudeInt>=38&&lokasiLatitudeInt<=36&&lokasiLongitudeInt>=-121&&lokasiLongitudeInt<=-123){
+            Toast.makeText(AttendanceActivity.this,"Gagal Absen", Toast.LENGTH_SHORT).show();
         }
         else{
 
@@ -306,43 +323,44 @@ public class AttendanceActivity extends AppCompatActivity {
             }
 
 
-        CheckBox wfh=findViewById(R.id.wfhCheckBox);
-
-
-        if(wfh.isChecked()){
-            workFromHome="Ya";
-        }else if(!wfh.isChecked()){
-            workFromHome="Tidak";
-        }
-
-
-
-
 //        tandatangan
             signature=BitMapToString(mSignaturePad.getSignatureBitmap());
 
 
-        dataterkirim=idUser+";"+namaUser+";"+jabatanUser+";"+currentTime+";"+currentDate+";"+workFromHome+";"+absensi+";"+photo+";"+signature;
+        dataterkirim=idUser+";"+namaUser+";"+jabatanUser+";"+workFromHome+";"+absensi+";"+photo+";"+signature;
+
+//            Toast.makeText(AttendanceActivity.this, dataterkirim, Toast.LENGTH_SHORT).show();
+
+
 
             Call<Response> call=RetrofitClient.getInstance().getApi().uploadAttendance(dataterkirim);
             call.enqueue(new Callback<Response>() {
                 @Override
-                public void onResponse(@NonNull Call<Response> call, @NonNull retrofit2.Response<Response> response) {
-                    Toast.makeText(AttendanceActivity.this, "Form Sukses Terkirim", Toast.LENGTH_SHORT).show();
+                public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+//                    Toast.makeText(AttendanceActivity.this, response.body().getRemark(), Toast.LENGTH_SHORT).show();
 
-//                    startActivity(new Intent(getBaseContext(), MainActivity.class));
-//                if(response.body().isStatus()){
-//
-//                }else{
-//
-//                }
+//                        startActivity(new Intent(getBaseContext(), AttendanceActivity.class));
+//                    Intent i = new Intent(AttendanceActivity.this, AttendanceActivity.class);
+//                    i.putExtra("id",extras.getString("id"));
+//                    i.putExtra("nama",extras.getString("nama"));
+//                    i.putExtra("posisi",extras.getString("posisi"));
+//                    startActivity(i);
+                if(response.body().isStatus()){
+                    Toast.makeText(AttendanceActivity.this, "berhasil 1", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(AttendanceActivity.this, "berhasil 2", Toast.LENGTH_SHORT).show();
+                }
                 }
 
                 @Override
-                public void onFailure(@NonNull Call<Response> call, @NonNull Throwable t) {
+                public void onFailure(Call<Response> call, Throwable t) {
                     Toast.makeText(AttendanceActivity.this, "Form Gagal Terkirim", Toast.LENGTH_SHORT).show();
                 }
             });
+
+
+
+
 
         }
     }
@@ -385,6 +403,7 @@ public class AttendanceActivity extends AppCompatActivity {
             lokasiLongitude= String.valueOf(location.getLongitude());
             lokasiLatitudeInt=location.getLatitude();
             lokasiLongitudeInt=location.getLongitude();
+
 
         }
 

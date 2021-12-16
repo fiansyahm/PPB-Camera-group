@@ -6,6 +6,13 @@ public class Response {
     private String id;
     private String nama;
     private String posisi;
+
+    private String currentdatetime[];
+    private String workfromhome[];
+    private String attendancestatus[];
+    private String photo[];
+    private String signature[];
+
     private String schedule[];
     private String scheduledet[];
     private int totalrow;
@@ -27,6 +34,12 @@ public class Response {
     public String getPosisi() {
         return posisi;
     }
+    public String [] getCurrentdatetime(){return currentdatetime;}
+    public String [] getWorkfromhome(){return workfromhome;}
+    public String [] getAttendancestatus(){return attendancestatus;}
+    public String [] getPhoto(){return photo;}
+    public String [] getSignature(){return signature;}
+
     public String [] getSchedule() {
         return schedule;
     }
@@ -36,4 +49,6 @@ public class Response {
     public int getTotalrow() {
         return totalrow;
     }
+
+
 }
