@@ -42,6 +42,11 @@
         android:testOnly="true"
         android:theme="@style/Theme.Finalproject" >
         <activity
+            android:name="com.salmanarif.tugasppb.NavigationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.Finalproject.NoActionBar" />
+        <activity
             android:name="com.salmanarif.tugasppb.DetailAttendanceActivity"
             android:exported="false" />
         <activity
@@ -90,6 +95,12 @@
                 android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
+
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.salmanarif.tugasppb.com.squareup.picasso"
+            android:exported="false" />
+
         <service
             android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
             android:directBootAware="true"

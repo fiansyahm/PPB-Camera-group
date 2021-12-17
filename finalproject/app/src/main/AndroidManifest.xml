@@ -21,6 +21,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Finalproject">
         <activity
+            android:name=".NavigationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.Finalproject.NoActionBar" />
+        <activity
             android:name=".DetailAttendanceActivity"
             android:exported="false" />
         <activity

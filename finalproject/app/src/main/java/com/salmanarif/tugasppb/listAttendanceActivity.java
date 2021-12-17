@@ -45,30 +45,12 @@ public class listAttendanceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_attendance);
 
         ListView lv = findViewById(R.id.listView);
-//        ArrayList<kontak> listKontak = new ArrayList<>();
         Kontakadapter= new listAdapter(this,R.layout.item_user,listKontak);
         lv.setAdapter(Kontakadapter);
-
-//        kontak newKontak1 = new kontak("budi","081111");
-//        kontak newKontak2 = new kontak("agus","082222");
-//        Kontakadapter.add(newKontak1);
-//        Kontakadapter.add(newKontak2);
-//
-//        dbopen = new SQLiteOpenHelper(this,"kontak.db",null,1) {
-//            @Override
-//            public void onCreate(SQLiteDatabase db)
-//            {
-//            }
-//            @Override
-//            public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { }
-//        };
-//        dbku = dbopen.getWritableDatabase();
-//        dbku.execSQL("create table if not exists kontak(nama TEXT, nohp TEXT);");
-        ambildata();
+//        Kontakadapter.add(new list("a","x"));
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @SuppressLint("Range")
             public void onItemClick(AdapterView<?> parent, View item, int position, long rowID) {
-
                 Bundle extras = getIntent().getExtras();
                 Intent i = new Intent(listAttendanceActivity.this, DetailAttendanceActivity.class);
                 i.putExtra("id",extras.getString("id"));
@@ -80,6 +62,7 @@ public class listAttendanceActivity extends AppCompatActivity {
                 i.putExtra("photo",photo[position]);
                 i.putExtra("signature",signature[position]);
                 startActivity(i);
+                startActivity(new Intent(getBaseContext(), DetailAttendanceActivity.class));
 
                 //                Cursor cur = dbku.rawQuery("select * from kontak",null);
 //                int i=0;if(cur.getCount() > 0) cur.moveToFirst();
@@ -91,6 +74,7 @@ public class listAttendanceActivity extends AppCompatActivity {
 //                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+Uri.encode(nomerHandphone))));
             }
         });
+        ambildata();
     }
 
 
