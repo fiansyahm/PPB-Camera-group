@@ -53,7 +53,6 @@ public class AbsentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera);
         b1=(Button) findViewById(R.id.button3);
         b2=findViewById(R.id.buttonUpload);
         iv=(ImageView) findViewById(R.id.imageView3);

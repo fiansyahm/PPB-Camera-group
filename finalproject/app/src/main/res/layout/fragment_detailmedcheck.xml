@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailmedcheckFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fmedcheckdetailnamatv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="112dp"
+            android:text="Nama"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/fmedcheckdetailnamastr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_toRightOf="@id/fmedcheckdetailnamatv"
+            />
+
+        <TextView
+            android:id="@+id/fmedcheckdetailjabatantv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Jabatan"
+            android:textSize="20sp"
+            android:layout_below="@id/fmedcheckdetailnamatv"/>
+
+        <TextView
+            android:id="@+id/fmedcheckdetailjabatanstr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fmedcheckdetailnamatv"
+            android:layout_toRightOf="@id/fmedcheckdetailjabatantv"
+            />
+
+        <TextView
+            android:id="@+id/fmedcheckdetailwaktutv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Waktu"
+            android:textSize="20sp"
+            android:layout_below="@id/fmedcheckdetailjabatantv"/>
+
+        <TextView
+            android:id="@+id/fmedcheckdetailwaktustr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="57dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fmedcheckdetailjabatantv"
+            android:layout_toRightOf="@id/fmedcheckdetailwaktutv"/>
+        <TextView
+            android:id="@+id/fmedcheckdetailworkfromhometv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="WFH/WFO"
+            android:textSize="20sp"
+            android:layout_below="@id/fmedcheckdetailwaktutv"/>
+
+        <TextView
+            android:id="@+id/fmedcheckdetailworkfromhomestr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="57dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fmedcheckdetailwaktutv"
+            android:layout_toRightOf="@id/fmedcheckdetailworkfromhometv"/>
+        <TextView
+            android:id="@+id/fmedcheckdetailstatusabsensitv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Kondisi Tubuh"
+            android:textSize="20sp"
+            android:layout_below="@id/fmedcheckdetailworkfromhometv"/>
+
+        <TextView
+            android:id="@+id/fmedcheckdetailstatusabsensistr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="57dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fmedcheckdetailworkfromhometv"
+            android:layout_toRightOf="@id/fmedcheckdetailstatusabsensitv"/>
+
+        <TextView
+            android:id="@+id/fmedcheckdetailfototv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Kontak ODP"
+            android:textSize="20sp"
+            android:layout_below="@id/fmedcheckdetailstatusabsensitv" />
+
+        <TextView
+            android:id="@+id/fmedcheckdetailpicturetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fmedcheckdetailstatusabsensitv"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@id/fmedcheckdetailfototv"
+            android:ems="10"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/fmedcheckdetailttdtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Demam"
+            android:textSize="20sp"
+            android:layout_below="@id/fmedcheckdetailfototv"
+           />
+
+        <TextView
+            android:id="@+id/fmedcheckdetailsignaturetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="42dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fmedcheckdetailfototv"
+            android:layout_toRightOf="@+id/fmedcheckdetailttdtv"/>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

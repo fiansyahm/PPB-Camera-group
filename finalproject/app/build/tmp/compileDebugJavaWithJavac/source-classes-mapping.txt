@@ -1,39 +1,35 @@
 com/salmanarif/tugasppb/ui/slideshow/SlideshowFragment.java
  com.salmanarif.tugasppb.ui.slideshow.SlideshowFragment
  com.salmanarif.tugasppb.ui.slideshow.SlideshowFragment$1
+ com.salmanarif.tugasppb.ui.slideshow.SlideshowFragment$1$1
+ com.salmanarif.tugasppb.ui.slideshow.SlideshowFragment$2
+ com.salmanarif.tugasppb.ui.slideshow.SlideshowFragment$3
+com/salmanarif/tugasppb/DetailAttendanceFragment.java
+ com.salmanarif.tugasppb.DetailAttendanceFragment
 com/salmanarif/tugasppb/list.java
  com.salmanarif.tugasppb.list
+com/salmanarif/tugasppb/databinding/FragmentBlankBinding.java
+ com.salmanarif.tugasppb.databinding.FragmentBlankBinding
 com/salmanarif/tugasppb/ui/home/HomeViewModel.java
  com.salmanarif.tugasppb.ui.home.HomeViewModel
 com/salmanarif/tugasppb/ui/home/HomeFragment.java
  com.salmanarif.tugasppb.ui.home.HomeFragment
  com.salmanarif.tugasppb.ui.home.HomeFragment$1
-com/salmanarif/tugasppb/databinding/ActivityListAttendanceBinding.java
- com.salmanarif.tugasppb.databinding.ActivityListAttendanceBinding
+com/salmanarif/tugasppb/DetailmedcheckFragment.java
+ com.salmanarif.tugasppb.DetailmedcheckFragment
 com/salmanarif/tugasppb/databinding/FragmentGalleryBinding.java
  com.salmanarif.tugasppb.databinding.FragmentGalleryBinding
 com/salmanarif/tugasppb/MedcheckActivity.java
  com.salmanarif.tugasppb.MedcheckActivity
  com.salmanarif.tugasppb.MedcheckActivity$1
  com.salmanarif.tugasppb.MedcheckActivity$1$1
-com/salmanarif/tugasppb/FingerprintActivity.java
- com.salmanarif.tugasppb.FingerprintActivity
- com.salmanarif.tugasppb.FingerprintActivity$1
- com.salmanarif.tugasppb.FingerprintActivity$2
 com/salmanarif/tugasppb/databinding/ContentNavigationBinding.java
  com.salmanarif.tugasppb.databinding.ContentNavigationBinding
-com/salmanarif/tugasppb/databinding/ActivityFingerprintBinding.java
- com.salmanarif.tugasppb.databinding.ActivityFingerprintBinding
+com/salmanarif/tugasppb/ui/logout/LogoutFragment.java
+ com.salmanarif.tugasppb.ui.logout.LogoutFragment
+ com.salmanarif.tugasppb.ui.logout.LogoutFragment$1
 com/salmanarif/tugasppb/Api.java
  com.salmanarif.tugasppb.Api
-com/salmanarif/tugasppb/CameraActivity.java
- com.salmanarif.tugasppb.CameraActivity
- com.salmanarif.tugasppb.CameraActivity$1
- com.salmanarif.tugasppb.CameraActivity$2
- com.salmanarif.tugasppb.CameraActivity$3
- com.salmanarif.tugasppb.CameraActivity$4
- com.salmanarif.tugasppb.CameraActivity$5
- com.salmanarif.tugasppb.CameraActivity$6
 com/salmanarif/tugasppb/RetrofitClient.java
  com.salmanarif.tugasppb.RetrofitClient
 com/salmanarif/tugasppb/LoginActivity.java
@@ -43,19 +39,14 @@ com/salmanarif/tugasppb/LoginActivity.java
  com.salmanarif.tugasppb.LoginActivity$3
 com/salmanarif/tugasppb/databinding/ActivityMedcheckBinding.java
  com.salmanarif.tugasppb.databinding.ActivityMedcheckBinding
-com/salmanarif/tugasppb/AttendanceActivity.java
- com.salmanarif.tugasppb.AttendanceActivity
- com.salmanarif.tugasppb.AttendanceActivity$1
- com.salmanarif.tugasppb.AttendanceActivity$2
- com.salmanarif.tugasppb.AttendanceActivity$2$1
- com.salmanarif.tugasppb.AttendanceActivity$3
- com.salmanarif.tugasppb.AttendanceActivity$4
- com.salmanarif.tugasppb.AttendanceActivity$5
- com.salmanarif.tugasppb.AttendanceActivity$lokasiListener
+com/salmanarif/tugasppb/databinding/FragmentLogoutBinding.java
+ com.salmanarif.tugasppb.databinding.FragmentLogoutBinding
 com/salmanarif/tugasppb/listAdapter.java
  com.salmanarif.tugasppb.listAdapter
  com.salmanarif.tugasppb.listAdapter$1
  com.salmanarif.tugasppb.listAdapter$ViewHolder
+com/salmanarif/tugasppb/BlankFragment.java
+ com.salmanarif.tugasppb.BlankFragment
 com/salmanarif/tugasppb/MainActivity.java
  com.salmanarif.tugasppb.MainActivity
  com.salmanarif.tugasppb.MainActivity$1
@@ -69,19 +60,34 @@ com/salmanarif/tugasppb/AbsentActivity.java
  com.salmanarif.tugasppb.AbsentActivity$6
 com/salmanarif/tugasppb/Response.java
  com.salmanarif.tugasppb.Response
-com/salmanarif/tugasppb/databinding/ActivityNavigationBinding.java
- com.salmanarif.tugasppb.databinding.ActivityNavigationBinding
+com/salmanarif/tugasppb/ui/attendance/AttendanceFragment.java
+ com.salmanarif.tugasppb.ui.attendance.AttendanceFragment
+ com.salmanarif.tugasppb.ui.attendance.AttendanceFragment$1
+ com.salmanarif.tugasppb.ui.attendance.AttendanceFragment$1$1
+ com.salmanarif.tugasppb.ui.attendance.AttendanceFragment$1$2
+ com.salmanarif.tugasppb.ui.attendance.AttendanceFragment$1$2$1
+ com.salmanarif.tugasppb.ui.attendance.AttendanceFragment$1$3
+ com.salmanarif.tugasppb.ui.attendance.AttendanceFragment$2
+ com.salmanarif.tugasppb.ui.attendance.AttendanceFragment$3
 com/salmanarif/tugasppb/databinding/FragmentHomeBinding.java
  com.salmanarif.tugasppb.databinding.FragmentHomeBinding
-com/salmanarif/tugasppb/databinding/ActivityAttendanceBinding.java
- com.salmanarif.tugasppb.databinding.ActivityAttendanceBinding
+com/salmanarif/tugasppb/databinding/FragmentDetailmedcheckBinding.java
+ com.salmanarif.tugasppb.databinding.FragmentDetailmedcheckBinding
 com/salmanarif/tugasppb/NavigationActivity.java
  com.salmanarif.tugasppb.NavigationActivity
  com.salmanarif.tugasppb.NavigationActivity$1
+ com.salmanarif.tugasppb.NavigationActivity$2
+ com.salmanarif.tugasppb.NavigationActivity$3
+ com.salmanarif.tugasppb.NavigationActivity$4
+ com.salmanarif.tugasppb.NavigationActivity$lokasiListener
+com/salmanarif/tugasppb/ui/logout/LogoutViewModel.java
+ com.salmanarif.tugasppb.ui.logout.LogoutViewModel
 com/salmanarif/tugasppb/databinding/AppBarNavigationBinding.java
  com.salmanarif.tugasppb.databinding.AppBarNavigationBinding
 com/salmanarif/tugasppb/ui/slideshow/SlideshowViewModel.java
  com.salmanarif.tugasppb.ui.slideshow.SlideshowViewModel
+com/salmanarif/tugasppb/databinding/FragmentAttendanceBinding.java
+ com.salmanarif.tugasppb.databinding.FragmentAttendanceBinding
 com/salmanarif/tugasppb/databinding/ItemUserBinding.java
  com.salmanarif.tugasppb.databinding.ItemUserBinding
 com/salmanarif/tugasppb/databinding/ActivityLoginBinding.java
@@ -90,12 +96,6 @@ com/salmanarif/tugasppb/ui/gallery/GalleryViewModel.java
  com.salmanarif.tugasppb.ui.gallery.GalleryViewModel
 com/salmanarif/tugasppb/databinding/InputDialogBinding.java
  com.salmanarif.tugasppb.databinding.InputDialogBinding
-com/salmanarif/tugasppb/FacesDetection.java
- com.salmanarif.tugasppb.FacesDetection
- com.salmanarif.tugasppb.FacesDetection$1
- com.salmanarif.tugasppb.FacesDetection$2
-com/salmanarif/tugasppb/databinding/ActivityDetailAttendanceBinding.java
- com.salmanarif.tugasppb.databinding.ActivityDetailAttendanceBinding
 com/salmanarif/tugasppb/databinding/NavHeaderNavigationBinding.java
  com.salmanarif.tugasppb.databinding.NavHeaderNavigationBinding
 com/salmanarif/tugasppb/databinding/FragmentSlideshowBinding.java
@@ -103,23 +103,24 @@ com/salmanarif/tugasppb/databinding/FragmentSlideshowBinding.java
 com/salmanarif/tugasppb/ui/gallery/GalleryFragment.java
  com.salmanarif.tugasppb.ui.gallery.GalleryFragment
  com.salmanarif.tugasppb.ui.gallery.GalleryFragment$1
+ com.salmanarif.tugasppb.ui.gallery.GalleryFragment$1$1
+ com.salmanarif.tugasppb.ui.gallery.GalleryFragment$2
+ com.salmanarif.tugasppb.ui.gallery.GalleryFragment$3
 com/salmanarif/tugasppb/databinding/ActivityRegisterBinding.java
  com.salmanarif.tugasppb.databinding.ActivityRegisterBinding
 com/salmanarif/tugasppb/RegisterActivity.java
  com.salmanarif.tugasppb.RegisterActivity
  com.salmanarif.tugasppb.RegisterActivity$1
  com.salmanarif.tugasppb.RegisterActivity$2
+com/salmanarif/tugasppb/ui/attendance/AttendanceViewModel.java
+ com.salmanarif.tugasppb.ui.attendance.AttendanceViewModel
 com/salmanarif/tugasppb/databinding/ActivityMainBinding.java
  com.salmanarif.tugasppb.databinding.ActivityMainBinding
 com/salmanarif/tugasppb/BuildConfig.java
  com.salmanarif.tugasppb.BuildConfig
 com/salmanarif/tugasppb/databinding/ActivityAbsentBinding.java
  com.salmanarif.tugasppb.databinding.ActivityAbsentBinding
-com/salmanarif/tugasppb/databinding/ActivityCameraBinding.java
- com.salmanarif.tugasppb.databinding.ActivityCameraBinding
-com/salmanarif/tugasppb/listAttendanceActivity.java
- com.salmanarif.tugasppb.listAttendanceActivity
- com.salmanarif.tugasppb.listAttendanceActivity$1
- com.salmanarif.tugasppb.listAttendanceActivity$2
-com/salmanarif/tugasppb/DetailAttendanceActivity.java
- com.salmanarif.tugasppb.DetailAttendanceActivity
+com/salmanarif/tugasppb/databinding/FragmentDetailAttendanceBinding.java
+ com.salmanarif.tugasppb.databinding.FragmentDetailAttendanceBinding
+com/salmanarif/tugasppb/databinding/ActivityNavigationBinding.java
+ com.salmanarif.tugasppb.databinding.ActivityNavigationBinding

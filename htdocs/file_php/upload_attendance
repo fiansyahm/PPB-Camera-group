@@ -1,0 +1,40 @@
+<?php
+
+	include 'db_config.php';
+
+	$con = mysqli_connect($HOST, $USER, $PASSWORD, $DB_NAME);
+
+	$encodedAtt = $_POST['EN_ATTENDANCE'];
+	$parts = [];
+	$parts = explode(";", $encodedAtt);
+
+	$sql = "SELECT * FROM `attendance`";
+	$res = mysqli_query($con,$sql);
+	$count = mysqli_num_rows($res)+1;
+	// $count=1;
+	$imageTitle = "myImage$count";
+	$imageLocation = "photoAttendance/$imageTitle.jpg";
+
+	$signatureTitle = "mySignature$count";
+	$signatureLocation = "signatureAttendance/$signatureTitle.jpg";
+
+	$sqlQuery = "INSERT INTO `attendance`(`id_akun`,`namaUser`,`jabatanUser`,`workFromHome`,`status`,`photo`,`signature`) VALUES ('$parts[0]','$parts[1]', '$parts[2]','$parts[3]','$parts[4]','$imageTitle','$signatureTitle')";
+	
+	if(mysqli_query($con, $sqlQuery)){
+		file_put_contents($imageLocation, base64_decode($parts[5]));
+		file_put_contents($signatureLocation, base64_decode($parts[6]));
+		$result["status"] = TRUE;
+		$result["remarks"] = "Attendance Form Uploaded Successfully";
+
+	}else{
+
+		$result["status"] = FALSE;
+		$result["remarks"] = "Image Uploading Failed";
+
+	}
+
+	mysqli_close($con);
+
+	print(json_encode($result));
+
+?>

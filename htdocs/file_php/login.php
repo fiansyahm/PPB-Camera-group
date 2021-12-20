@@ -3,22 +3,35 @@
 	include 'db_config.php';
 
 	$con = mysqli_connect($HOST, $USER, $PASSWORD, $DB_NAME);
+	
+	$encodedLogin = $_POST['EN_LOGIN'];
+	$parts = [];
+	$parts = explode(";", $encodedLogin);
+	
+// 	$sqlQuery = "SELECT `nama`,`password` FROM `register`where `nama`='$parts[0]' AND `password`='$parts[1]'";
+    $sqlQuery = "SELECT `id`,`nama`,`posisi` FROM `register` where `email`='$parts[0]' AND `password`='$parts[1]'";
+	$res = mysqli_query($con,$sqlQuery);
+	$count = mysqli_num_rows($res);
+    
+    
+    $row=$res->fetch_assoc();
+    // while($row = $result->fetch_assoc()) {
+    // }
+	
 
-	$encodedImage = $_POST['EN_LOGIN'];
-
-	$sqlQuery = "INSERT INTO `id`(`id`) VALUES ('$encodedImage')";
-
-	if(mysqli_query($con, $sqlQuery)){
-
-		// file_put_contents($imageLocation, base64_decode($encodedImage));
+	if(mysqli_query($con, $sqlQuery)&&$count>=1){
 
 		$result["status"] = TRUE;
-		$result["remarks"] = "Image Uploaded Successfully";
+		$result["remarks"] = "Login Successfully";
+		$result["id"] = $row["id"];
+		$result["nama"] = $row["nama"];
+		$result["posisi"] = $row["posisi"];
+		
 
 	}else{
 
 		$result["status"] = FALSE;
-		$result["remarks"] = "Image Uploading Failed";
+		$result["remarks"] = "Login Failed";
 
 	}
 

@@ -71,6 +71,16 @@ tools:context=".LoginActivity">
         android:layout_below="@id/login_btn"
         android:layout_marginStart="170dp"
         android:layout_marginEnd="40dp"/>
+    <TextView
+        android:id="@+id/flaglogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="192dp"
+        android:layout_below="@id/SignUp_LogIn"
+        android:text=""
+        android:textSize="20sp"
+        />
 
 
 

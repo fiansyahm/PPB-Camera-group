@@ -26,25 +26,10 @@
             android:label="@string/title_activity_navigation"
             android:theme="@style/Theme.Finalproject.NoActionBar" />
         <activity
-            android:name=".DetailAttendanceActivity"
-            android:exported="false" />
-        <activity
-            android:name=".listAttendanceActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FingerprintActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AttendanceActivity"
-            android:exported="true" />
-        <activity
-            android:name=".CameraActivity"
             android:exported="true" />
         <activity
             android:name=".MedcheckActivity"

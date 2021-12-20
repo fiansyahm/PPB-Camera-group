@@ -56,5 +56,21 @@ public interface Api {
             @Field("EN_ATT") String encodedAtt
     );
 
+    @FormUrlEncoded
+    @POST("contoh.php")
+    Call<Response> contoh(
+            @Field("EN_ATT") String axax
+    );
 
+    @FormUrlEncoded
+    @POST("updateprofile.php")
+    Call<Response> updateprofile(
+            @Field("EN_PROF") String updateprofil
+    );
+
+    @FormUrlEncoded
+    @POST("listmedcheck.php")
+    Call<Response> listmedcheck(
+            @Field("EN_LMEDCHECK") String listmedcheck
+    );
 }

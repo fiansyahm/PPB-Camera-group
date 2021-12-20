@@ -140,10 +140,11 @@ public class MedcheckActivity extends AppCompatActivity {
                         Toast.makeText(MedcheckActivity.this, response.body().getRemark(), Toast.LENGTH_SHORT).show();
 
 //                        startActivity(new Intent(getBaseContext(), AttendanceActivity.class));
-                        Intent i = new Intent(MedcheckActivity.this, AttendanceActivity.class);
+                        Intent i = new Intent(MedcheckActivity.this, NavigationActivity.class);
                         i.putExtra("id",extras.getString("id"));
                         i.putExtra("nama",extras.getString("nama"));
                         i.putExtra("posisi",extras.getString("posisi"));
+                        i.putExtra("myimage",extras.getString("myimage"));
                         startActivity(i);
 //                if(response.body().isStatus()){
 //
