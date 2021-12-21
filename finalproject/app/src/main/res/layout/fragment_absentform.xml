@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.absent.AbsentformFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/formabsentintro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kehadiran" />
+
+        <TextView
+            android:id="@+id/formabsentnamalengkap"
+            android:layout_width="344dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/formabsentintro"
+            android:text="Nama Lengkap" />
+
+        <TextView
+            android:id="@+id/formabsentnamalengkaptv"
+            android:layout_width="344dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/formabsentnamalengkap"
+            android:text="Muhammad Arifiansyah" />
+
+        <TextView
+            android:id="@+id/formabsenttipeijin"
+            android:layout_width="344dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/formabsentnamalengkaptv"
+            android:text="Tipe Ijin" />
+
+        <Spinner
+            android:id="@+id/formabsentspinnertipeijin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsenttipeijin" />
+
+        <TextView
+            android:id="@+id/formabsentjenisijin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsentspinnertipeijin"
+            android:text="Jenis Ijin" />
+
+        <Spinner
+            android:id="@+id/formabsentspinnerjenisijin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsentjenisijin" />
+
+        <TextView
+            android:id="@+id/formabsentalasanijin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsentspinnerjenisijin"
+            android:text="Alasan anda ijin" />
+
+        <EditText
+            android:id="@+id/formabsentalasanijinET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsentalasanijin" />
+        <TextView
+            android:id="@+id/formabsentbuktiijinTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsentalasanijinET"
+            android:text="Bukti ijin"/>
+        <ImageView
+            android:id="@+id/formabsentbuktiijin"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@id/formabsentbuktiijinTv"
+            android:layout_marginTop="30dp"
+            tools:srcCompat="@drawable/ic_launcher_background"/>
+
+        <TextView
+            android:id="@+id/formabsenttglmulaiTv"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsentbuktiijin"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:text="Tanggal Mulai Izin" />
+        <TextView
+            android:id="@+id/formabsenttglselesaiTv"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsentbuktiijin"
+            android:layout_toRightOf="@id/formabsenttglmulaiTv"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="70dp"
+            android:text="Tanggal Selesai Izin" />
+
+        <TextView
+            android:id="@+id/formabsenttglmulaiET"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsenttglmulaiTv"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="60dp"
+            android:text="1-12-2021" />
+        <TextView
+            android:id="@+id/formabsenttglselesaiET"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsenttglmulaiTv"
+            android:layout_toRightOf="@id/formabsenttglmulaiET"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="70dp"
+            android:text="4-12-2021" />
+
+        <Button
+            android:id="@+id/formabsenttglmulaiBtn"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsenttglmulaiET"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="25dp"
+            android:text="Pilih" />
+        <Button
+            android:id="@+id/formabsenttglselesaiBtn"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsenttglmulaiET"
+            android:layout_toRightOf="@id/formabsenttglmulaiBtn"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="70dp"
+            android:text="Pilih" />
+
+
+        <!--        <Button-->
+<!--            android:id="@+id/formabsentkirim"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/formabsentbuktiijin"-->
+<!--            android:layout_marginTop="30dp"-->
+<!--            android:text="Kirim" />-->
+    </RelativeLayout>
+
+</ScrollView>

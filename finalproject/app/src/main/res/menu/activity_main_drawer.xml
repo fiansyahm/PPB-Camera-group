@@ -21,6 +21,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Attendance" />
         <item
+            android:id="@+id/nav_absent"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Absent" />
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Logout" />
