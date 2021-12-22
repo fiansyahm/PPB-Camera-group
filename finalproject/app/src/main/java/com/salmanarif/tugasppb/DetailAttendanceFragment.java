@@ -19,24 +19,19 @@ public class DetailAttendanceFragment extends Fragment {
     ImageView signature,photo;
     String idstr,namastr,posisistr;
     Bundle extras;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         extras = getActivity().getIntent().getExtras();
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_detail_attendance, container, false);
-
         idstr=extras.getString("id");
         namastr=extras.getString("nama");
         posisistr=extras.getString("posisi");
-
         nama=view.findViewById(R.id.fdetailnamastr);
         nama.setText(extras.getString("nama"));
         posisi=view.findViewById(R.id.fdetailjabatanstr);
@@ -55,7 +50,6 @@ public class DetailAttendanceFragment extends Fragment {
         Picasso.get()
                 .load("https://ostensible-berry.000webhostapp.com/file_php/signatureAttendance/"+((NavigationActivity) getActivity()).signatureabsen+".jpg")
                 .into(signature);
-
         return view;
     }
 }

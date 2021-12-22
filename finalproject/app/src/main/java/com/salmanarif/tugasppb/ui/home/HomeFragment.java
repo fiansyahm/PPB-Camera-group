@@ -39,16 +39,16 @@ public class HomeFragment extends Fragment {
             public void onChanged(@Nullable String s) {
 
 //                textView.setText(s);
-                Button homefragment=root.findViewById(R.id.homefragmentabsent);
-                homefragment.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        homefragment.setVisibility(View.GONE);
-                        ((NavigationActivity) getActivity()).Rid=R.id.homefragmentabsent;
-                        Fragment fragment = new AbsentformFragment();
-                        ((NavigationActivity) getActivity()).newFragment(fragment);
-                    }
-                });
+//                Button homefragment=root.findViewById(R.id.homefragmentabsent);
+//                homefragment.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        homefragment.setVisibility(View.GONE);
+//                        ((NavigationActivity) getActivity()).Rid=R.id.homefragmentabsent;
+//                        Fragment fragment = new AbsentformFragment();
+//                        ((NavigationActivity) getActivity()).newFragment(fragment);
+//                    }
+//                });
 
             }
         });

@@ -28,14 +28,11 @@ public class DetailmedcheckFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_detailmedcheck, container, false);
-
         idstr=extras.getString("id");
         namastr=extras.getString("nama");
         posisistr=extras.getString("posisi");
-
         nama=view.findViewById(R.id.fmedcheckdetailnamastr);
         nama.setText(extras.getString("nama"));
         posisi=view.findViewById(R.id.fmedcheckdetailjabatanstr);

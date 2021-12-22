@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -37,9 +39,12 @@ import java.io.ByteArrayOutputStream;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -109,7 +114,8 @@ public class AttendanceFragment extends Fragment {
                 img=root.findViewById(R.id.fimageAttandence);
                 list.add("NONE");
 
-                currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+                Locale locale = new Locale("id", "ID");
+                currentTime = new SimpleDateFormat("HH:mm:ss", locale).format(new Date());
                 currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                 dateNow=root.findViewById(R.id.fdate);
                 dateNow.setText(currentDate);
@@ -201,7 +207,6 @@ public class AttendanceFragment extends Fragment {
 
                 });
 
-
 //signature
                 Button mClearButton=root.findViewById(R.id.fdeleteSignature);
                 mClearButton.setOnClickListener(operasi);
@@ -223,17 +228,12 @@ public class AttendanceFragment extends Fragment {
                         mClearButton.setEnabled(false);
                     }
                 });
-
-
-
                 Button buttonPhoto=root.findViewById(R.id.fbuttonUploadPhotoAttandence);
                 buttonPhoto.setOnClickListener(operasi);
                 Button buttonDatang=root.findViewById(R.id.fdatangbtnAttandence);
                 buttonDatang.setOnClickListener(operasi);
                 Button buttonPulang=root.findViewById(R.id.fpulangbtnAttandence);
                 buttonPulang.setOnClickListener(operasi);
-
-
             }
         });
         return root;
@@ -246,6 +246,7 @@ public class AttendanceFragment extends Fragment {
     }
 
     View.OnClickListener operasi = new View.OnClickListener() {
+        @RequiresApi(api = Build.VERSION_CODES.O)
         @SuppressLint("SetTextI18n")
         @Override
         public void onClick(View v) {
@@ -285,15 +286,34 @@ public class AttendanceFragment extends Fragment {
         return ((NavigationActivity) getActivity()).lokasiLongitudeInt;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     void absensi(View v){
         DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+        @SuppressLint({"NewApi", "LocalSuppress"}) LocalTime time = LocalTime.parse(currentTime);
+        @SuppressLint({"NewApi", "LocalSuppress"}) LocalTime time0 = LocalTime.parse(listScheduledet[0]);
+        @SuppressLint({"NewApi", "LocalSuppress"}) LocalTime time1 = LocalTime.parse(listScheduledet[1]);
+        @SuppressLint({"NewApi", "LocalSuppress"}) LocalTime time2 = LocalTime.parse(listScheduledet[2]);
+        @SuppressLint({"NewApi", "LocalSuppress"}) LocalTime time3 = LocalTime.parse(listScheduledet[3]);
         Date date0,date1,date2 = null;
         try {
-            date0 = (Date)formatter.parse("12:00:00");
+
+//            date0 = (Date)formatter.parse("12:00:00");
+
+            date0 = (Date)formatter.parse(currentTime);
             date1 = (Date)formatter.parse(listScheduledet[0]);
             date2 = (Date)formatter.parse(listScheduledet[3]);
 
-            if (date0.after(date1) && date0.before(date2)) {
+            if (time.isAfter(time0)==true && time0.isBefore(time1)==true) {
+
+
+                if (v.getId()==R.id.fdatangbtnAttandence){
+                    absensi="Datang Tepat Waktu";
+                    absensiEnable=1;
+                }
+                else absensi="Pulang Awal";absensiEnable=0;
+
+            }
+            else if (time.isAfter(time1)==true && time0.isBefore(time2)==true) {
                 absensiEnable=1;
 
                 if (v.getId()==R.id.fdatangbtnAttandence){
@@ -302,16 +322,24 @@ public class AttendanceFragment extends Fragment {
                 else absensi="Pulang Awal";
 
             }
+            else if (time.isAfter(time2)==true && time0.isBefore(time3)==true) {
+
+
+                if (v.getId()==R.id.fdatangbtnAttandence){
+                    absensi="Datang Terlambat"; absensiEnable=0;
+                }
+                else absensi="Pulang Tepat Waktu"; absensiEnable=1;
+
+            }
             else{
                 absensiEnable=0;
                 if (v.getId()==R.id.fdatangbtnAttandence){
-                    absensi="Datang Tepat Waktu";
+                    absensi="Tidak diizinkan";
                 }
-                else absensi="Pulang Tepat Waktu";
-                toast(absensi);
+                else absensi="Tidak diizinkan";
             }
 
-
+            toast(absensi);
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -353,9 +381,9 @@ public class AttendanceFragment extends Fragment {
 //                    i.putExtra("posisi",extras.getString("posisi"));
 //                    startActivity(i);
                 if(response.body().isStatus()){
-                    toast("berhasil 1");
+                    toast("Berhasil");
                 }else{
-                    toast("berhasil 2");
+                    toast("Sudah Mengisi form kehadiran sebelumnya");
                 }
             }
 

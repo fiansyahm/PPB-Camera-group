@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.absent.DetailAbsentFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fdetailabsentnamatv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="112dp"
+            android:text="Nama"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/fdetailabsentnamastr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_toRightOf="@id/fdetailabsentnamatv"
+            />
+
+        <TextView
+            android:id="@+id/fdetailabsentjabatantv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Jabatan"
+            android:textSize="20sp"
+            android:layout_below="@id/fdetailabsentnamatv"/>
+
+        <TextView
+            android:id="@+id/fdetailabsentjabatanstr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fdetailabsentnamatv"
+            android:layout_toRightOf="@id/fdetailabsentjabatantv"
+            />
+
+        <TextView
+            android:id="@+id/fdetailabsentwaktutv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Tipe Ijin"
+            android:textSize="20sp"
+            android:layout_below="@id/fdetailabsentjabatantv"/>
+
+        <TextView
+            android:id="@+id/fdetailabsentwaktustr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="57dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fdetailabsentjabatantv"
+            android:layout_toRightOf="@id/fdetailabsentwaktutv"/>
+        <TextView
+            android:id="@+id/fdetailabsentworkfromhometv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Jenis Ijin"
+            android:textSize="20sp"
+            android:layout_below="@id/fdetailabsentwaktutv"/>
+
+        <TextView
+            android:id="@+id/fdetailabsentworkfromhomestr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="57dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fdetailabsentwaktutv"
+            android:layout_toRightOf="@id/fdetailabsentworkfromhometv"/>
+        <TextView
+            android:id="@+id/fdetailabsentstatusabsensitv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Alasan"
+            android:textSize="20sp"
+            android:layout_below="@id/fdetailabsentworkfromhometv"/>
+
+        <TextView
+            android:id="@+id/fdetailabsentstatusabsensistr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="57dp"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:layout_below="@id/fdetailabsentworkfromhometv"
+            android:layout_toRightOf="@id/fdetailabsentstatusabsensitv"/>
+
+        <TextView
+            android:id="@+id/fdetailabsentmulaiselesaitv"
+            android:layout_width="134dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/fdetailabsentstatusabsensitv"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="30dp"
+            android:text="Tanggal Ijin"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fdetailabsentfototv"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fdetailabsentmulaiselesaitv"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:text="Tanggal Mulai"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/fdetailabsentttdtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="48dp"
+            android:textSize="20sp"
+            android:text="Tanggal Selesai"
+            android:layout_below="@id/fdetailabsentmulaiselesaitv"
+            android:layout_toRightOf="@id/fdetailabsentfototv"/>
+
+        <ImageView
+            android:id="@+id/fdetailabsentbukti"
+            android:layout_width="280dp"
+            android:layout_height="161dp"
+            android:layout_marginStart="70dp"
+            android:layout_below="@id/fdetailabsentmulaiselesaitv"
+            android:layout_marginTop="60dp" />
+
+    </RelativeLayout>
+
+</FrameLayout>
+

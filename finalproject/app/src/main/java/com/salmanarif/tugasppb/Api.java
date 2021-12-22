@@ -20,6 +20,12 @@ public interface Api {
     );
 
     @FormUrlEncoded
+    @POST("listmedcheck.php")
+    Call<Response> listmedcheck(
+            @Field("EN_LMEDCHECK") String listmedcheck
+    );
+
+    @FormUrlEncoded
     @POST("login.php")
     Call<Response> login(
             @Field("EN_LOGIN") String encodedRegis
@@ -39,6 +45,12 @@ public interface Api {
     );
 
     @FormUrlEncoded
+    @POST("attendance.php")
+    Call<Response> attendance(
+            @Field("EN_ATT") String encodedAtt
+    );
+
+    @FormUrlEncoded
     @POST("schedule.php")
     Call<Response> schedule(
             @Field("EN_SCH") String encodedSch
@@ -48,12 +60,6 @@ public interface Api {
     @POST("scheduledetail.php")
     Call<Response> scheduledetail(
             @Field("EN_SCHDET") String encodedSchdet
-    );
-
-    @FormUrlEncoded
-    @POST("attendance.php")
-    Call<Response> attendance(
-            @Field("EN_ATT") String encodedAtt
     );
 
     @FormUrlEncoded
@@ -68,9 +74,15 @@ public interface Api {
             @Field("EN_PROF") String updateprofil
     );
 
+
     @FormUrlEncoded
-    @POST("listmedcheck.php")
-    Call<Response> listmedcheck(
-            @Field("EN_LMEDCHECK") String listmedcheck
+    @POST("uploadabsent.php")
+    Call<Response> uploadAbsent(
+            @Field("EN_ABSENT") String listmedcheck
+    );
+    @FormUrlEncoded
+    @POST("listabsent.php")
+    Call<Response> absent(
+            @Field("EN_ABSENTLIST") String listmedcheck
     );
 }

@@ -24,13 +24,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/homefragmentabsent"
-            android:layout_width="99dp"
-            android:layout_height="72dp"
-            tools:layout_editor_absoluteX="31dp"
-            tools:layout_editor_absoluteY="31dp"
-            android:text="Absent"
-            android:layout_below="@+id/text_home"/>
+<!--        <Button-->
+<!--            android:id="@+id/homefragmentabsent"-->
+<!--            android:layout_width="99dp"-->
+<!--            android:layout_height="72dp"-->
+<!--            tools:layout_editor_absoluteX="31dp"-->
+<!--            tools:layout_editor_absoluteY="31dp"-->
+<!--            android:text="Absent"-->
+<!--            android:layout_below="@+id/text_home"/>-->
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

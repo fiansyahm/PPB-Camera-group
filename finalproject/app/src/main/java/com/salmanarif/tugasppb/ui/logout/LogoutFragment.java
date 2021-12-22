@@ -35,7 +35,6 @@ public class LogoutFragment extends Fragment {
         logoutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-//                startActivity(new Intent(getContext(), LoginActivity.class));
                 System.exit(0);
             }
         });

@@ -53,10 +53,8 @@ public class SlideshowFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         slideshowViewModel =
                 new ViewModelProvider(this).get(SlideshowViewModel.class);
-
         binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
 //        final TextView textView = binding.textSlideshow;
         slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -169,10 +167,6 @@ public class SlideshowFragment extends Fragment {
         buat
                 .setCancelable(false)
                 .setPositiveButton("YES", (dialog, which) -> {
-//                  if (v.getId() == R.id.btnSearch) {
-//                        search_item(nama.getText().toString(), noHp.getText().toString());
-//                    }
-//                    dialog.dismiss();
                 })
                 .setNegativeButton("NO", (dialog, which) -> dialog.cancel());
         buat.show();

@@ -76,7 +76,7 @@ public class NavigationActivity extends AppCompatActivity {
     public int profileFlag=0;
 
 //    attendance list
-    public String waktu,workfromhome,statusabsen,fotoabsen,signatureabsen;
+    public String waktu,workfromhome,statusabsen,fotoabsen,signatureabsen,buktiijin;
 
 
 //    r.id
@@ -128,7 +128,7 @@ public String photoName=null;
                             Bundle bundle=result.getData().getExtras();
                             bitmap=(Bitmap)bundle.get("data");
                             photo=BitMapToString(bitmap);
-//                            if(profileFlag==1)updateProfile();
+                            if(profileFlag==1)updateProfile();
                         }
                     }
                 });
@@ -217,11 +217,11 @@ public String photoName=null;
             profileFlag = 0;
         }
         else{
-            if(getIntent().getExtras().getString("myimage").length()>2){
-                Picasso.get()
-                        .load("https://ostensible-berry.000webhostapp.com/file_php/profileimages/" + getIntent().getExtras().getString("myimage") + ".jpg")
-                        .into(profileHeader);
-            }
+//            if(getIntent().getExtras().getString("myimage").length()>2){
+//                Picasso.get()
+//                        .load("https://ostensible-berry.000webhostapp.com/file_php/profileimages/" + getIntent().getExtras().getString("myimage") +id+ ".jpg")
+//                        .into(profileHeader);
+//            }
         }
     }
 

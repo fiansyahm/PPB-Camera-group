@@ -61,16 +61,15 @@ public class AbsentFragment extends Fragment {
     String statusabsen[];
     String photo[];
     String signature[];
+    String schedule[];
+    String scheduledet[];
     ImageButton buttonRefresh,buttonRefresh1;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        absentViewModel =
-                new ViewModelProvider(this).get(AbsentViewModel.class);
-
+        absentViewModel = new ViewModelProvider(this).get(AbsentViewModel.class);
         binding = FragmentAbsentBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
 //        final TextView textView = binding.textSbsent;
         absentViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -83,7 +82,6 @@ public class AbsentFragment extends Fragment {
                 buttonRefresh.setOnClickListener(operasi);
                 buttonRefresh1=root.findViewById(R.id.btnAbsent);
                 buttonRefresh1.setOnClickListener(operasi);
-
 //                isi
                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @SuppressLint("Range")
@@ -95,14 +93,14 @@ public class AbsentFragment extends Fragment {
                         ((NavigationActivity) getActivity()).statusabsen=statusabsen[position];
                         ((NavigationActivity) getActivity()).fotoabsen=photo[position];
                         ((NavigationActivity) getActivity()).signatureabsen=signature[position];
+                        ((NavigationActivity) getActivity()).buktiijin=schedule[position];
                         Kontakadapter.clear();
-                        DetailAttendanceFragment dt=new DetailAttendanceFragment();
+                        DetailAbsentFragment dt=new DetailAbsentFragment();
                         ((NavigationActivity) getActivity()).newFragment(dt);
                     }
                 });
 //
                 ambildata();
-
             }
         });
         return root;
@@ -146,9 +144,8 @@ public class AbsentFragment extends Fragment {
 
     @SuppressLint("Range")
     private void ambildata(){
-
         Bundle extras = getActivity().getIntent().getExtras();
-        Call<Response> call= RetrofitClient.getInstance().getApi().attendance(extras.getString("id"));
+        Call<Response> call= RetrofitClient.getInstance().getApi().absent(extras.getString("id"));
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(@NonNull Call<Response> call, @NonNull retrofit2.Response<Response> response) {
@@ -158,8 +155,10 @@ public class AbsentFragment extends Fragment {
                     statusabsen=response.body().getAttendancestatus();
                     photo=response.body().getPhoto();
                     signature=response.body().getSignature();
+                    schedule=response.body().getSchedule();
+                    scheduledet=response.body().getScheduledet();
                     for(int x=0;x<response.body().getTotalrow();x++)
-                        insertKontak(currentdatetime[x], statusabsen[x]);
+                        insertKontak(currentdatetime[x], scheduledet[x]);
                     toast("Sukses Load Data");
                 }else{
 

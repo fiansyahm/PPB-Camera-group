@@ -20,11 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         baru=findViewById(R.id.pindah_camera);
-//        startActivity(new Intent(getBaseContext(), LoginActivity.class));
+        startActivity(new Intent(getBaseContext(), LoginActivity.class));
         baru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getBaseContext(),LoginActivity.class));
+//                startActivity(new Intent(getBaseContext(),LoginActivity.class));
             }
         });
 

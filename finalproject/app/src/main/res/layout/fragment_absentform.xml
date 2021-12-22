@@ -135,15 +135,14 @@
             android:layout_marginTop="30dp"
             android:layout_marginLeft="70dp"
             android:text="Pilih" />
-
-
-        <!--        <Button-->
-<!--            android:id="@+id/formabsentkirim"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/formabsentbuktiijin"-->
-<!--            android:layout_marginTop="30dp"-->
-<!--            android:text="Kirim" />-->
+        <Button
+            android:id="@+id/formabsentkirim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/formabsenttglmulaiBtn"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="30dp"
+            android:text="Kirim" />
     </RelativeLayout>
 
 </ScrollView>

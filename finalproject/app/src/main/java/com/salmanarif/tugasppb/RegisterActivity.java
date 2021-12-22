@@ -39,7 +39,6 @@ public class RegisterActivity extends AppCompatActivity {
                 send=NameStr+";"+PositionStr+";"+EmailSignUpStr+";"+PasswordLoginStr;
                 uploadToServer(send);
 
-//                startActivity(new Intent(getBaseContext(), LoginActivity.class));
             }
         });
 
@@ -63,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
-                Toast.makeText(RegisterActivity.this, "Upload Gagal", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Register Gagal", Toast.LENGTH_SHORT).show();
             }
         });
 

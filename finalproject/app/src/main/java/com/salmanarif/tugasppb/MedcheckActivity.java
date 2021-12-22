@@ -33,7 +33,6 @@ public class MedcheckActivity extends AppCompatActivity {
             Nama = extras.getString("nama");
             helloTv=findViewById(R.id.hello);
             helloTv.setText("Selamat Datang "+Nama);
-
             //The key argument here must match that used in the other activity
         }
 
@@ -47,10 +46,7 @@ public class MedcheckActivity extends AppCompatActivity {
         gejala8 = findViewById(R.id.gejala8);
         gejala9 = findViewById(R.id.gejala9);
         kirim=findViewById(R.id.kirim);
-
-
         // Saat Tombol Diklik Maka Program Akan mengeksekusi Pesanan dari User
-
         String list[]={"Sehat","Tidak Sehat"};
         Spinner spinner = (Spinner) findViewById(R.id.spinnerRiwayat);
         ArrayAdapter<String> AdapterList = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,list);
@@ -146,11 +142,6 @@ public class MedcheckActivity extends AppCompatActivity {
                         i.putExtra("posisi",extras.getString("posisi"));
                         i.putExtra("myimage",extras.getString("myimage"));
                         startActivity(i);
-//                if(response.body().isStatus()){
-//
-//                }else{
-//
-//                }
                     }
 
                     @Override

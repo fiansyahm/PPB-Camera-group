@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    //    private static final String Base_URL="http://192.168.1.7/file_php/";
+//    private static final String Base_URL="http://192.168.1.6/file_php/";
     private static final String Base_URL="https://ostensible-berry.000webhostapp.com/file_php/";
     private static RetrofitClient myclient;
     private Retrofit retrofit;
